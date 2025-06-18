@@ -2,22 +2,84 @@
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RCE datamodel</title>
+
+    <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
     <script class="remove">
-  const respecConfig = {
-    specStatus: "ED",
-    shortName: "rce-datamodel",
-    editors: [{
-      name: "Naam van redacteur",
-      company: "Rijksdienst voor het Cultureel Erfgoed",
-      companyURL: "https://cultureelerfgoed.nl"
-    }],
-    github: "https://github.com/cultureelerfgoed/RCE-datamodel",
-    editorsDraft: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html",
-    format: "markdown",
-    license: "cc-by",
-  };
-</script>
+      const respecConfig = {
+        title: "RCE datamodel",
+        specStatus: "ED",
+        shortName: "rce-datamodel",
+        version: "1.0",
+        publishDate: "2025-06-18",
+        editors: [
+          {
+            name: "Patrick Mout",
+            company: "Rijksdienst voor het Cultureel Erfgoed",
+            companyURL: "https://cultureelerfgoed.nl",
+          },
+        ],
+        github: "https://github.com/cultureelerfgoed/RCE-datamodel",
+        editorsDraft: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html",
+        edDraftURI: "https://cultureelerfgoed.github.io/RCE-datamodel/",
+        latestVersion: "https://cultureelerfgoed.github.io/RCE-datamodel/",
+        format: "markdown",
+        license: "cc-by",
+        localBiblio: {
+          "RCE-Datamodel": {
+            title: "RCE Datamodel versie 0.5",
+            href: "https://cultureelerfgoed.github.io/RCE-datamodel/",
+            authors: ["Rijksdienst voor het Cultureel Erfgoed"],
+            date: "2025-05-01"
+          }
+        },
+        history: [
+          {
+            date: "2025-06-18",
+            description: "Versie 1.0 – huidige versie",
+            url: "https://cultureelerfgoed.github.io/RCE-datamodel/"
+          }
+        ]
+      };
+    </script>
+
+    <style>
+      table.bordered {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      table.bordered caption {
+        caption-side: top;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+      table.bordered th,
+      table.bordered td {
+        border: 1px solid #444;
+        padding: 8px 12px;
+        text-align: left;
+      }
+      table.bordered thead th {
+        background-color: #f0f0f0;
+      }
+      table.bordered tbody tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+    </style>
+    <style>
+      div.body {
+        max-width: 1800px !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      p {
+        max-width: 100%; /* niet beperkt */
+      }
+    </style>
   </head>
   <body>
     <section id="abstract">
@@ -28,37 +90,51 @@
     </section>
 
     <section id="sotd">
+      <p>
+        <p>
+          Dit document is een werkversie (<strong>versie 1.0</strong>) van de documentatie van het RCE-datamodel. 
+          Het is opgesteld voor interne bespreking. 
+          Deze versie heeft geen formele status binnen de W3C en vertegenwoordigt geen formeel goedgekeurd beleid van de RCE.
+        </p>
+      </p>
     </section>
 
-    <section>
+    <section id="doel-model">
       <h2>Doel van het model</h2>
       <p>
-        Het RCE datamodel is ontwikkeld om kennisdata en de bijbehorende
-        semantiek vast te leggen. In tegenstelling tot procesdata richt
-        kennisdata zich op het beschrijven van objecten waarover de RCE
-        inhoudelijke kennis heeft vergaard.
+        Het RCE-datamodel is ontwikkeld om kennisdata en de bijbehorende semantiek vast te leggen. Hierbij ligt de focus op het beschrijven van objecten waarover de RCE inhoudelijke kennis heeft vergaard.
+        <p>
+          Hoewel het model zich momenteel richt op kennisdata, is het in de toekomst uit te breiden om ook procesdata te omvatten, waarmee bijvoorbeeld werkprocessen kunnen worden vastgelegd.
+        </p>
       </p>
-       </section>
-      <section id="model-status">
-      <h2>Status  van het model</h2>
-      <p>
-      Het model verkeert momenteel in de ontwikkelfase. In de volgende stap zal een proof of concept (PoC) worden uitgevoerd om de toepasbaarheid en werking van het model in de praktijk te toetsen.
-      </p>
-
     </section>
+
+    <section id="model-status">
+      <h2>Status van het model</h2>
+      <p>
+        Dit document beschrijft versie <strong>0.5</strong> van het onderliggende datamodel 
+        van de Rijksdienst voor het Cultureel Erfgoed (RCE). 
+        Voor meer informatie over het datamodel en de bijbehorende resources, zie: 
+        <a href="https://cultureelerfgoed.github.io/RCE-datamodel/">RCE Datamodel 0.5</a>.
+      </p>
+    </section>
+  
+
+  
+
     <section id="model-structuur">
-      <h2>Model structuur</h2>
+      <h2>Structuur van het model</h2>
       <p>
         Het datamodel is een abstracte representatie van de objecten binnen een specifiek domein, hun eigenschappen (of aspecten) en de onderlinge relaties daartussen. 
-        <br>Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, gebouwd erfgoed,
+        <p>Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, gebouwd erfgoed,
         het historisch landschap en de rijkscollectie kunstvoorwerpen. Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.
       </p>
-  
-      <section id="gelaagdheid-model">
-        <h3>gelaagdheid</h3>
+
+      <section id="niveaus-model">
+        <h3>Lagen</h3>
         <p>
-          Het model is opgebouwd uit gelaagde niveaus die samen de
-          structuur van het model vormen. <br />Deze structuur ondersteunt zowel
+          Het model is opgebouwd uit lagen die samen de
+          structuur van het model vormen. <p>Deze structuur ondersteunt zowel
           verticale relaties (hiërarchieën van algemene naar specifieke
           concepten) als horizontale relaties (associaties tussen verwante
           concepten op hetzelfde niveau). Door deze opzet is het mogelijk om
@@ -67,23 +143,23 @@
         <img
               src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_lagen.drawio.svg"
               alt="Visualisatie van de lagen binnen het conceptueel model"
-              width="1350"
+              width="1600"
             />
         
-        <section>
-          <h4>objectlaag</h4>
+        <article>
+          <h5><i>object-laag</i></h5>
           <p>
             Het fundament van het model wordt gevormd door het
             <strong>object</strong>, dat fungeert als oriëntatiepunt binnen de
             datastructuur. Dit kan een artefact, boek, foto of ander type object
-            zijn. Deze laag is geen onderdeel van het formele model, omdat er op
+            zijn. <p> Deze laag is geen onderdeel van het formele model, omdat er op
             dit niveau geen eigenschappen zijn gedefinieerd. Het object vormt
             echter wel een essentieel vertrekpunt voor de databenadering.
           </p>
-        </section>
+        </article>
 
-        <section>
-          <h4>classificatielaag</h4>
+        <article>
+          <h4><i>classificatie-laag</i></h4>
           <p>
             Op dit niveau worden objecten ingedeeld in hoofd- en subclassificaties. Deze objectklassen zijn semantisch met elkaar verbonden, waardoor objecten in verschillende contexten kunnen worden geïnterpreteerd en toegepast.
           </p>
@@ -91,115 +167,169 @@
             Elke klasse biedt een alternatieve insteek om toegang tot data te
             verkrijgen. Naast hiërarchische structuren kunnen ook associatieve
             verbanden worden gelegd, bijvoorbeeld tussen verwante types of
-            thematieken. De classificatielaag is bovendien uitbreidbaar en
+            thematieken. De classificatie-laag is bovendien uitbreidbaar en
             schaalbaar, zodat het model kan meegroeien met veranderende
             inzichten.
           </p>
           <p>
             In deze laag staat het cultuurhistorisch object centraal. Andere objecten, zoals tekstobjecten of audiovisuele objecten, kunnen het cultuurhistorisch object beschrijven of verbeelden, maar zijn daar niet hiërarchisch van afhankelijk. Elk type object is zelfstandig en op zichzelf benaderbaar.
           </p>
-        </section>
+        </article>
 
-        <section>
-          <h4>aspectlaag</h4>
+        <article>
+          <h4><i>aspect-laag</i></h4>
           <p>
             Deze laag beschrijft de eigenschappen of aspecten van een object. Denk
             aan fysieke eigenschappen, datering, herkomst of functionele
             classificatie. Elk aspect voegt detail en betekenis toe aan de
             beschrijving van het object.
           </p>
-        </section>
+        </article>
 
-        <section>
-          <h4>begrippenlaag</h4>
+        <article>
+          <h4><i>begrippen-laag</i></h4>
           <p>
             Hier worden de genormaliseerde termen en begrippen vastgelegd die
-            per object of aspect gebruikt mogen worden. Deze termen komen uit
+            per object of aspect gebruikt mogen worden. <p>Deze termen komen uit
             gecontroleerde vocabulaires of thesauri en zorgen voor consistentie
             en hergebruik van terminologie. Dit vermindert ambiguïteit en
             bevordert interoperabiliteit.
           </p>
-        </section>
+        </article>
 
-        <section>
-          <h4>provenance laag</h4>
+        <article>
+          <h4><i>provenance-laag</i></h4>
           <p>
-            De provenance laag doorkruist alle andere lagen van het datamodel.
-            Op het niveau van elk attribuut wordt vastgelegd waar de informatie
+            Deze laag doorkruist alle andere lagen van het datamodel.
+            <p>Op het niveau van elk attribuut wordt vastgelegd waar de informatie
             vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke
             periode de gegevens geldig zijn.
           </p>
+        </article>
         </section>
-      </section>
-      <section id="semantische-relaties">
-        <h3>semantische relaties</h3>
-        <p>
-          In deze sectie wordt nader ingegaan op de wijze waarop entiteiten
-          binnen het conceptueel model met elkaar in verband staan.
-        </p>
-        <section>
-          <h4>samenhang</h4>
+        
+   <section id="samenhang"></section>
+  <h3>Samenhang</h3>
+<p>In deze sectie wordt de samenhang tussen objecten beschreven.</p>
+  <article>
+    <h4><i>relatie tussen objecten</i></h4>
+    <p>
+      Een cultuurhistorisch object kan zijn afgebeeld op een of meerdere beeld- en audiovisuele objecten,
+      zoals een foto, tekening of website.
+    </p>
+    <p>
+      Een tekstobject kan een afbeelding bevatten van één of meerdere cultuurhistorische objecten.
+      Beeld- en audiovisuele objecten kunnen bovendien voorkomen binnen tekstobjecten, zoals boeken of tijdschriften.
+    </p>
+    <figure style="
+  max-width: 800px;
+  margin: 1.5em auto;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" 
+    alt="Visualisatie van samenhang van objecten binnen het conceptueel model" 
+    style="width: 470px; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+  </article>
+
+  <article>
+    <h4><i>relatie tussen cultuurhistorische objecten</i></h4>
+    <p>
+      Een cultuurhistorisch object kan een ander cultuurhistorisch object bevatten of onderdeel ervan zijn.
+      Bijvoorbeeld: een rijksmonument is onderdeel van een complex, of een oor kan onderdeel zijn van een kopje.
+    </p>
+    <figure style="
+  max-width: 800px;
+  margin: 1.5em auto;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg" 
+    alt="Visualisatie van samenhang van typen binnen het conceptueel model" 
+    style="width: 500px; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+  </article>
+
+<section id="tijdaspect"></section>
+  <h3>Tijdsaspect</h3>
           <p>
-            Een cultuurhistorisch object kan zijn afgebeeld op een of meerdere
-            beeld- en audiovisuele objecten, zoals een foto, tekening of website.
-            Een tekstobject kan een afbeelding bevatten van één of meerdere
-            cultuurhistorische objecten. Beeld- en audiovisuele objecten kunnen
-            bovendien voorkomen binnen tekst objecten, zoals boeken of
-            tijdschriften.
+            Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden en kan uiteenlopen van een specifieke datum tot een ruimer tijdvak, bestaande uit een begin- en einddatum, of een periode met een begin- en einddatum.
           </p>
-          <figure>
-            <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg"
-              alt="Visualisatie van samenhang van objecten binnen het conceptueel model"
-              width="500"
-            />
-          </figure>
+        <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect.drawio.svg" 
+    alt="Visualisatie van tijdsaspect binnen het conceptueel model" 
+    style="width: 1100px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+
+
+        
+       <section id="feit en gebeurtenis"></section>
+  <h3>Feit en gebeurtenis</h3>
           <p>
-          Een cultuurhistorisch object kan een ander cultuurhistorisch object bevatten of onderdeel ervan zijn. Zoals een rijksmonument is onderdeel van een complex. Een oorkopje kan onderdeel zijn van een kopje.
-</p>
-<figure>
-            <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg"
-              alt="Visualisatie van samenhang van typen binnen het conceptueel model"
-              width="500"
-            />
-          </figure>
-        </section>
-        <section>
-          <h4>tijdsaspect</h4>
-          <p>
-            Een tijdsaspect kan een enkele datum hebben of een tijdvak bestaande
-            uit een begin- en einddatum of een periode met een begin- of
-            einddatum.
-          </p>
-          <figure>
-            <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect.drawio.svg"
-              alt="Visualisatie van tijdsaspect binnen het conceptueel model"
-              width="1400"
-            />
-          </figure>
-        </section>
-        <h4>feit versus gebeurtenis</h4>
-          <p>
-          In het model wordt een aspect van een object opgevat als een feit of een gebeurtenis. Een feit betreft een directe toekenning van een eigenschap aan het object, zoals het vastleggen van een bouwjaar. 
-          Een gebeurtenis beschrijft een handeling of proces waarbij het aspect wordt verbonden aan een gebeurtenis, 
+          In het model wordt een aspect van een object opgevat als een feit of een gebeurtenis.<p>Een feit betreft een directe toekenning van een eigenschap aan het object, zoals het vastleggen van een bouwjaar. 
+          <p>Een gebeurtenis beschrijft een handeling of proces waarbij het aspect wordt verbonden aan een gebeurtenis, 
           bijvoorbeeld het koppelen van het bouwjaar aan de gebeurtenis ‘bouw’. Deze benadering geldt voor alle aspecten van een object.
           </p>
-          <figure>
-            <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg"
-              alt="Visualisatie van gebeurtenis versus feit binnen het conceptueel model"
-              width="650"
-            />
-          </figure>
+          <figure style="
+  max-width: 900px;
+  margin: 1.5em auto;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg" 
+    alt="Visualisatie van gebeurtenis versus feit binnen het conceptueel model" 
+    style="width: 640px; height: auto; border-radius: 8px;"
+  />
+</figure>
+
         </section>
       </section>
     </section>
      </section>
-
-    <section id="logisch-model">
-      <h2>Model opbouw</h2>
+     </section>
+ 
+    <section id="basiscomponenten-model">
+      <h2>Basiscomponenten van het model</h2>
       <p>
       Het model is ontworpen met het oog op normalisatie,
       herbruikbaarheid en interoperabiliteit. Elk element in het model moet
@@ -209,9 +339,9 @@
       <br>
   
       <section>
-  <h4>objecten</h4>
+  <h4>Objecten</h4>
   <p>
-    Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten – zoals tekstobjecten of beeld- en audiovisuele objecten – zijn eraan gerelateerd. 
+    Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten zoals tekstobjecten of beeld- en audiovisuele objecten – zijn eraan gerelateerd. 
   </p>
   <p>
     De cultuurhistorische objecten zijn vooralsnog onderverdeeld in de volgende klassen of typen:
@@ -256,190 +386,948 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr>
-    <tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur. </td></tr>
-    <tr><td>Archeologisch monster</td><td></td></tr>
-    <tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr>
-    <tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen. </td></tr>
-    <tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr>
-    <tr><td>Archeologische vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr>
-    <tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuur historische objecten als Archeologische terreinen zijn. </td></tr>
-    <tr><td>Rijksmonumentaal complex</td><td></td></tr>
-    <tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden). </td></tr>
-    <tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen. </td></tr>
+<tr><td>Archeobotanische vondst</td><td>Resten van planten of zaden die zijn aangetroffen bij archeologisch onderzoek en die informatie geven over het vroegere gebruik van planten, landbouw of vegetatie.</td></tr>
+<tr><td>Archeozoölogische vondst</td><td>Dierenbotten of andere resten van dieren die zijn aangetroffen bij archeologisch onderzoek, en die informatie geven over bijvoorbeeld voedselconsumptie of huisdieren.</td></tr>
+<tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr>
+<tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur.</td></tr>
+<tr><td>Archeologisch monster</td><td>Een representatief deel van een archeologische context, verzameld voor nadere laboratoriumanalyse.</td></tr>
+<tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr>
+<tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen.</td></tr>
+<tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr>
+<tr><td>Archeologische vondst</td><td></td></tr>
+<tr><td>Artefact vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr>
+<tr><td>Cultuurhistorisch object</td><td>Een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is. (bijv. archeologische vondst, schilderij, monument).</td></tr>
+<tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuurhistorische objecten als Archeologische terreinen zijn.</td></tr>
+<tr><td>Rijksmonument complex</td><td>Groep van rijksmonumenten die gezamenlijk één geheel vormen.</td></tr>
+<tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden).</td></tr>
+<tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen.</td></tr>
+
   </tbody>
 </table>
 <br>
 <br>
-  Een overzicht van de gebruikte attributen binnen de typen is te vinden in
-  <a href="#attribuut-cultuurhistorisch-object">Bijlage: entiteiten en attributen</a>.
+  <p>Een overzicht van de gebruikte attributen binnen de typen is te vinden in de verdere beschrijving van het model.
 </p>
+
+   <article>
+        <h5><i>cultuurhistorisch object</i></h5>
+      <p>De modellering van cultuurhistorische objecten, hun typen en onderlinge samenhang is als volgt uitgewerkt.</p>
+<p>De onderstaande visualisatie geeft de logische relaties weer tussen rijksmonumenten en rijksmonumentencomplexen binnen het datamodel van de RCE.</p>
+       <figure style="
+  max-width: 600px;
+  margin: 1.5em auto;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_rijksmonument.drawio.svg" 
+    alt="Visualisatie van samenhang rijksmonument" 
+    style="width: 400px; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+
+        </article>
+<br>
+        <p>De onderstaande visualisatie geeft inzicht in de samenhang tussen archeologische objecten, hun typen en onderlinge relaties zoals vastgelegd in het model. Alle getoonde objecten zijn van het type cultuurhistorisch object.</p>
+       <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_archeologie.drawio.svg" 
+    alt="Visualisatie van samenhang archeologie van logisch model" 
+    style="width: 600px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+            <br>
+            <br>
+             <p>De onderstaande visualisatie geeft inzicht in de typering tussen vondsten zoals vastgelegd in het model. Alle getoonde objecten zijn van het type cultuurhistorisch object.</p>
+        <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_vondsten.drawio.svg" 
+    alt="Visualisatie van samenhang vondsten van logisch model" 
+    style="width: 550px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+            </article>
 </section>
       <section>
-        <h4>registratie</h4>
-        <p> De aspecten – ofwel eigenschappen – die worden vastgelegd voor cultuurhistorische objecten worden aangeduid als de registratie. Deze term wordt gebruikt om onderscheid te maken met andere beschrijvende informatie over een object, 
+        <h4>Registratie</h4>
+        <p> De aspecten ofwel eigenschappen die worden vastgelegd voor cultuurhistorische objecten worden aangeduid als de registratie. <p>Deze term wordt gebruikt om onderscheid te maken met andere beschrijvende informatie over een object, 
           zoals tekstuele documenten (bijvoorbeeld een rapport of boek) die aan het object zijn gekoppeld. 
           De registratie verwijst specifiek naar de gegevens die de RCE vastlegt over een cultuurhistorisch object in het kader van haar wettelijke taak en rol als kennisinstituut.
       </p>
       <br>
-      <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg"
-              alt="Visualisatie van opbouw van logisch model"
-              width="1000"
-            />
       
+ <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
+    alt="Visualisatie van opbouw van logisch model" 
+    style="width: 1000px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
 
-      <section>
-        <h5>kennisregistratie</h5>
+</figure>
+      <article>
+        <h5><i>kennisregistratie</i></h5>
         <p>
           Onder kennisregistratie vallen beschrijvingen, interpretaties,
           waarderingen en bronnen die aan het cultuurhistorisch object zijn
-          gekoppeld. Deze informatie komt vaak uit wetenschappelijk onderzoek of
+          gekoppeld. <p>Deze informatie komt vaak uit wetenschappelijk onderzoek of
           documentatiepraktijken.
         </p>
-        <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_kennisregistratie.drawio.svg"
-              alt="Visualisatie van kennisregistratie binnen het logisch model"
-              width="800"
-            />
-            <p>In de centrale kennisregistratie wordt de provenance van de kennisgegevens vastgelegd, zoals vertrouwelijkheid_aanduding, melder, formeel_standpunt.</p>
-      </section>
+        <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_kennisregistratie.drawio.svg" 
+    alt="Visualisatie van kennisregistratie binnen het logisch model" 
+    style="width:850px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
 
-      <section>
-        <h5>locatieregistratie</h5>
+            <p>In de centrale kennisregistratie wordt de provenance van de kennisgegevens vastgelegd, zoals vertrouwelijkheid_aanduding, melder, formeel_standpunt.</p>
+      
+          </article>
+
+          <article>
+        <h5><i>gebeurtenis</i></h5>
+<p>Een gebeurtenis is als volgt gemodelleerd.</p>
+ <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_gebeurtenis.drawio.svg" 
+    alt="Visualisatie van gebeurtenis binnen het logisch model" 
+    style="width: 2000px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
+
+
+      <article>
+        <h5><i>locatieregistratie</i></h5>
         <p>In de locatieregistratie wordt de ruimtelijke dimensie van het object vastgelegd.</p>
         <br>
-        <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_locatieregistratie.drawio.svg"
-              alt="Visualisatie van locatieregistratie binnen het logisch model"
-              width="800"
-            />
+        <figure style="
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+">
+  <img 
+    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_locatieregistratie.drawio.svg" 
+    alt="Visualisatie van locatieregistratie binnen het logisch model" 
+    style="width: 800px; max-width: none; height: auto; border-radius: 8px;"
+  />
+</figure>
+
       <p>In de centrale locatieregistratie wordt de provenance van de kennisgegevens vastgelegd, zoals vertrouwelijkheid_aanduding, melder, formeel_standpunt.</p>
-      </section>
-      <section>
-        <h5>standplaatsregistratie</h5>
+      </article>
+      <article>
+        <h5><i>standplaatsregistratie</i></h5>
         <p>In de standplaatsregistratie wordt de specifieke plek van een object vastgeleg, zoals een gebouw, kast of plank.</p>
         <br>
         <p> In de centrale standplaatsregistratie wordt de provenance van de kennisgegevens vastgelegd, zoals vertrouwelijkheid_aanduding, melder, formeel_standpunt.</p>
-        </section>
+        </article>
         </section>
       <section>
-  <h2>begrippen</h2>
+  <h2>Begrippen</h2>
   <p>
     Begrippen vormen een essentieel onderdeel van het RCE-datamodel. Ze zorgen voor eenduidige, herbruikbare en semantisch verantwoorde aanduidingen van concepten binnen de erfgoeddomeinen. Door gebruik te maken van formeel gedefinieerde begrippen uit gecontroleerde bronnen wordt zowel de interoperabiliteit als de vindbaarheid van informatie vergroot.
   </p>
-
-  <h3>typen begrippensystemen</h3>
-  <p>Het model ondersteunt en past verschillende typen begrippensystemen toe, afhankelijk van het gebruiksdoel en de informatielaag waarin ze worden ingezet:</p>
+<article>
+  <h3><i>typen begrippensystemen</i></h3>
+  <p>Het model ondersteunt en past verschillende typen begrippensystemen toe, afhankelijk van het gebruiksdoel en de informatie-laag waarin ze worden ingezet:</p>
   <ul>
     <li><strong>Woordenlijsten</strong>: Bieden eenvoudige, gecontroleerde termen om invoer consistent te houden en het zoeken te standaardiseren.</li>
     <li><strong>Thesauri</strong>: Leggen relaties tussen termen vast, zoals synoniemen, hiërarchieën en associaties. Dit maakt het mogelijk om met verwante termen te zoeken.</li>
     <li><strong>Taxonomieën</strong>: Structureren begrippen in hiërarchieën en bevorderen zo systematische ordening en analysemogelijkheden.</li>
   </ul>
-
-  <h3>voordelen van het gebruik van begrippen</h3>
+</article>
+<article>
+  <h3><i>voordelen gebruik van begrippen</i></h3>
   <ul>
     <li><strong>Betere gegevenskwaliteit</strong>: Consistente terminologie voorkomt ambiguïteit en fouten in data-invoer.</li>
     <li><strong>Betere vindbaarheid</strong>: Gebruikers kunnen via bredere of alternatieve termen alsnog de juiste gegevens vinden.</li>
     <li><strong>Herbruikbaarheid</strong>: Begrippen kunnen via URI’s worden hergebruikt in andere datasets, wat de linked data-kwaliteit versterkt.</li>
   </ul>
+  </article>
 </section>
 </section>
-<section id="bijlagen">
-      <h2>Bijlagen</h2>
-      
-  <h3>entiteiten en attributen</h3>
-  <p>In deze sectie worden de aspecten en attributen beschreven van het model. <br> Onder een attribuut verstaan we een gegevenselement dat een specifieke eigenschap van een entiteit - in het datamodel een object, aspect of begrip - beschrijft.  </p>
+<section id="beschrijving-model">
+  <h2>Beschrijving van het model</h2>
+  <p>In deze sectie worden de objecttypen, registratietypen en bijbehorende attributen beschreven.</p>
 
-  <section id="attribuut-cultuurhistorisch-object">
-    <h4>cultuurhistorisch object</h4>
-    <p>Onderstaande tabel beschrijft de attributen van het cultuurhistorisch object per type, zoals gebruikt in het model.</p>
+  <section id="cultuurhistorische objecten">
+    <h3>Cultuurhistorische objecten</h3>
+    <p>In deze sectie worden het cultuurhistorisch object en zijn typen beschreven, evenals de bijbehorende attributen.</p>
+ <article>
+  <h3><i>cultuurhistorisch_object</i></h3>
+  <p>In deze sectie wordt het cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>heeft_als_type</td>
+          <td>Relatie met een specifiek type cultuurhistorisch object.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>cho_nummer</td>
+          <td>Verplicht nummer voor ieder cultuurhistorisch object.</td>
+          <td><code>string</code></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td>vertrouwelijkheid_aanduiding</td>
+          <td>Geeft de vertrouwelijkheid aan, zowel bij registratie als bij het cultuurhistorisch object.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>internationaal_kenteken</td>
+          <td>Het internationale kenteken (monumentenschildje) dat de status van cultureel erfgoed toont.</td>
+          <td><code>boolean</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>melder</td>
+          <td>Melder vanuit een zaakproces die de melding van een cultuurhistorisch object of registratie maakt.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
 
-    <style>
-  table.bordered {
-    border-collapse: collapse;
-    width: 100%;
-  }
+  <article>
+    <h3><i>archeobotanische vondst</i></h3>
+    <p>In deze sectie worden de archeobotanische vondst en de bijbehorende attributen beschreven.</p>
 
-  table.bordered th,
-  table.bordered td {
-    border: 1px solid #444;
-    padding: 8px;
-    text-align: left;
-  }
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>omvang</td>
+          <td>De omvang van de vondst, bijvoorbeeld in hoeveelheid of volume.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>bevat</td>
+          <td>Verwijst naar een monster dat onderdeel uitmaakt van deze vondst.</td>
+          <td><code>URI</code></td>
+          <td>0..n</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
 
-  table.bordered th {
-    background-color: #f0f0f0;
-  }
-</style>
+  <article>
+    <h3><i>archeozoölogische vondst</i></h3>
+    <p>In deze sectie worden de archeozoölogische vondst en de bijbehorende attributen beschreven.</p>
 
-<table class="bordered">
-  <thead>
-    <tr>
-      <th>Attribuut</th>
-      <th>Type</th>
-      <th>Beschrijving</th>
-      <th>Verplicht</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cho_id</td>
-      <td>string</td>
-      <td>Unieke identificatie van het cultuurhistorisch object</td>
-      <td>Ja</td>
-    </tr>
-    <tr>
-      <td>verwervingswijze</td>
-      <td>URI (SKOS Concept)</td>
-      <td>De verwervingswijze van een cultuurhistorisch object</td>
-      <td>Nee</td>
-    </tr>
-    <tr>
-      <td>verzamelwijze</td>
-      <td>URI (SKOS Concept)</td>
-      <td>De verzamelwijze van een cultuurhistorisch object</td>
-      <td>Nee</td>
-    </tr>
-    <tr>
-      <td>aard_monument</td>
-      <td>URI (SKOS Concept)</td>
-      <td>URI (SKOS Concept)</td>
-      <td>Ja</td>
-    </tr>
-    <tr>
-      <td>juridische_status</td>
-      <td>URI (SKOS Concept)</td>
-      <td>De juridische status van het rijksmonument</td>
-      <td>Ja</td>
-    </tr>
-  </tbody>
-</table>
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ligt_in</td>
+          <td>Geeft aan dat de vondst is gevonden in een specifieke vindplaats.</td>
+          <td><code>URI</code></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td>verwervingswijze</td>
+          <td>De wijze waarop archeologische informatie is verkregen.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>verzamelwijze</td>
+          <td>De methode waarmee de vondst is verzameld.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis_onderzoek_meldingsnummer</td>
+          <td>Identificatienummer van een melding in Archis.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis_waarneming_nummer</td>
+          <td>Identificatienummer van een waarneming in Archis.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis2_vondstnummer</td>
+          <td>Identificatienummer uit Archis 2.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article>
+    <h3><i>archeologisch complex</i></archeologisch></h3>
+    <p>In deze sectie worden de archeologisch complex en de bijbehorende attributen beschreven.</p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ligt_in</td>
+          <td>Bevindt zich in een archeologisch terrein en/of vindplaats.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>bevat</td>
+          <td>Bevat grondsporen of vondsten.</td>
+          <td><code>URI</code></td>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <td>complextype</td>
+          <td>Type archeologisch complex.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>radar_site_id</td>
+          <td>Identificatienummer binnen RADAR.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article>
+    <h3><i>archeologisch grondspoor</i></h3>
+    <p>In deze sectie worden de archeologisch grondspoor en de bijbehorende attributen beschreven.</p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ligt_in</td>
+          <td>Gevonden in een specifieke vindplaats.</td>
+          <td><code>URI</code></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td>spoor_type</td>
+          <td>Type grondspoor.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>aantal_grondsporen</td>
+          <td>Aantal gevonden grondsporen.</td>
+          <td><code>integer</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis2_vondstnummer</td>
+          <td>ID van vondstnummer uit Archis 2.</td>
+          <td><code>string</code></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article>
+    <h3><i>archeologisch monster</i></h3>
+    <p>In deze sectie worden de archeologisch monster en de bijbehorende attributen beschreven.</p>
+
+    <table class="def">
+      <thead>
+        <tr>
+          <th>Attribuut</th>
+          <th>Beschrijving</th>
+          <th>Type</th>
+          <th>Kardinaliteit</th>
+          <th>Voorbeeld waarden</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>materiaal_uit</td>
+          <td>Afkomstig uit een archeobotanische of archeozoölogische vondst.</td>
+          <td><code>URI</code></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td>aantal_monsters</td>
+          <td>Aantal gevonden monsters.</td>
+          <td><code>integer</code></td>
+          <td>0..1</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+  
+  <article>
+  <h3><i>archeologisch onderzoeksgebied</i></h3>
+  <p>In deze sectie worden het archeologisch onderzoeksgebied en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>indicatie_arch_monumentenkaartwaardig</td>
+        <td>Indicatie archeologisch monumentenkaartwaardig.</td>
+        <td><code>boolean</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>archeologisch terrein</i></h3>
+  <p>In deze sectie worden het archeologisch terrein en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>archis2_monumentnummer</td>
+        <td>Monumentnummer uit Archis 2.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>acheologische vindplaats</i></h3>
+  <p>In deze sectie worden de acheologische vindplaats en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>archis2_waarnemingsnummer</td>
+        <td>Waarnemingsnummer uit Archis 2.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+       <tr>
+        <td>archis2_complexnummer</td>
+        <td>Complexnummer uit Archis 2.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+       <tr>
+        <td>archis2_vondstmeldingsnummer</td>
+        <td>Vondstmeldingsnummer uit Archis 2.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+ <article>
+  <h3><i>artefact vondst</i></h3>
+  <p>In deze sectie worden de artefact vondst en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>verwervingswijze</td>
+          <td>De wijze waarop archeologische informatie is verkregen.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>verzamelwijze</td>
+          <td>De methode waarmee de vondst is verzameld.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis_onderzoek_meldingnummer</td>
+          <td>Onderzoeksmeldingsnummer uit Archis 3.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis_waarneming_nummer</td>
+          <td>Waarnemingsnummer uit Archis 3.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <td>archis2_vondstnummer</td>
+          <td>Vondstnummer uit Archis 2.</td>
+          <td><code>URI</code></td>
+          <td>0..1</td>
+        </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>archeologisch terrein</i></h3>
+  <p>In deze sectie worden het archeologisch terrein en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>archis2_monumentnummer</td>
+        <td>Monumentnummer uit Archis 2.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>rijksmonument</i></h3>
+  <p>In deze sectie worden het rijksmonument en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>bebouwde_kom</td>
+        <td>Bebouwde kom type van een rijksmonument.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+       <tr>
+        <td>aard_monument</td>
+        <td>Monument aard van een rijksmonument.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td>juridische_status</td>
+        <td>Juridische status van een rijksmonument.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+       <tr>
+        <td>datum_van_inschrijving_in_mon_register</td>
+        <td>Datum van inschrijving van het rijksmonument in het monumentenregister.</td>
+        <td><code>date</code></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td>rijksmonumentnummer </td>
+        <td>Uniek id waaronder het rijksmonument bij RCE bekend is.</td>
+        <td><code>string</code></td>
+        <td>1..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>rijksmonument complex</i></h3>
+  <p>In deze sectie worden het rijksmonument complex en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>complexnummer</td>
+        <td>Uniek id waaronder het rijksmonument complex bij RCE bekend is.</td>
+        <td><code>string</code></td>
+        <td>0..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>stads- en dorpsgezicht</i></h3>
+  <p>In deze sectie worden het stads- en dorpsgezicht en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>gezicht_nummer</td>
+        <td>Uniek id waaronder het stads- en dorpsgezicht bij RCE bekend is.</td>
+        <td><code>string</code></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td>bijzonder_gebied</td>
+        <td>Kwalificatie bijzonder gebied van het stads- en dorpsgezicht.</td>
+        <td><code>boolean</code></td>
+        <td></td>
+      </tr>
+        <tr>
+        <td>proceduredatum_gezicht</td>
+        <td>Proceduredatum van het stads- en dorpsgezicht.</td>
+        <td><code>date</code></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>proceduredatum_gezicht</td>
+        <td>Proceduredatum van het stads- en dorpsgezicht.</td>
+        <td><code>date</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>intrekkingsdatum_gezicht</td>
+        <td>Intrekkingsdatum van het stads- en dorpsgezicht.</td>
+        <td><code>date</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+<article>
+  <h3><i>werelderfgoed</i></h3>
+  <p>In deze sectie worden het werelderfgoed en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>werelderfgoed_type</td>
+        <td>Type waartoe het werelderfgoed behoort.</td>
+        <td><code>string</code></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td>jaar_van_inschrijving</td>
+        <td>Jaar van inschrijving van het werelderfgoed in Werelderfgoedlijst.</td>
+        <td><code>string</code></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td>werelderfgoed_nummer</td>
+        <td>Uniek id waaronder het werelderfgoed bij RCE bekend is.</td>
+        <td><code>string</code></td>
+        <td>1..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
 
 
-  </section>
+</section>
+<section id="tekstobject">
+    <h3>Tekstobject</h3>
+    <p>In deze sectie wordt het tekstobject en worden de bijbehorende attributen beschreven.</p>
+</section>
+<section id="beel-daudio-visueelobject">
+    <h3>Beeld-audio-visueel object</h3>
+    <p>In deze sectie wordt het beeld-audio-visueel object en worden de bijbehorende attributen beschreven.</p>
+</section>
+<section id="kennisregistratie">
+    <h3>Kennisregistratie</h3>
+    <p>In deze sectie worden het kennisregistratie en zijn typen beschreven, evenals de bijbehorende attributen.</p>
 
-  <section id="attribuut-tekstobject">
-    <h4>tekst object</h4>
-  </section>
+    <article>
+  <h3><i>kennis_registratie</i></h3>
+  <p>In deze sectie wordt de kennisregistratie en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>vertrouwelijk_aanduiding</td>
+        <td>Vertrouwelijk aanduiding van de kennisregistraties.</td>
+        <td><code>URI</code></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>kennisdomein</td>
+        <td>Kennisdomein.</td>
+        <td><code>URI</code></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>kennisregistratie_toelichting</td>
+        <td>Toelichting op de kennisregistratie.</td>
+        <td><code>string</code></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>formeel_standpunt</td>
+        <td>formeel standpunt van RCE op de kennisregistratie.</td>
+        <td><code>boolean</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>is_volgens_norm</td>
+        <td>Volgens norm waarop kennisregistratie is gesteld.</td>
+        <td><code>boolean</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>observatie_datum</td>
+        <td>Observatiedatum van de kennisregistratie.</td>
+        <td><code>date</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>melder</td>
+        <td>Melder van de kennisregistratie.</td>
+        <td><code>string</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
 
-  <section id="attribuut-bav-object">
-    <h4>beeld-audio-visueel object</h4>
-  </section>
+<article>
+  <h3><i>gebeurtenis</i></h3>
+  <p>In deze sectie worden de gebeurtenis en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+        <th>Voorbeeld waarden</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>naam_gebeurtenis</td>
+        <td>Naam van de gebeurtenis.</td>
+        <td><code>URI</code></td>
+        <td>1..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
 
-  <section id="attribuut-kennisregistratie">
-    <h4>kennisregistratie</h4>
-  </section>
+<article>
+  <h3><i>datering</i></h3>
+  <p>In deze sectie worden datering en de bijbehorende attributen beschreven.</p>
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Beschrijving</th>
+        <th>Type</th>
+        <th>Kardinaliteit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>indicatie_nauwkeurigheid</td>
+        <td>Mate van nauwkeurigheid van de datering.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td>betrouwbaarheid</td>
+        <td>Mate van betrouwbaarheid van de datering.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td>datering_methode</td>
+        <td>Methode van datering.</td>
+        <td><code>URI</code></td>
+        <td>0..1</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
 
-  <section id="attribuut-locatieregistratie">
-    <h4>locatieregistratie</h4>
-  </section>
 
-  <section id="attribuut-standplaatsregistratie">
-    <h4>standplaatsregistratie</h4>
-  </section>
+
+
+</section>
+<section id="locatieregistratie">
+    <h3>Locatieregistratie</h3>
+    <p>In deze sectie wordt de locatieregistratie en worden de bijbehorende attributen beschreven.</p>
 </section>
 
-  </body>
+</body>
 </html>
-
