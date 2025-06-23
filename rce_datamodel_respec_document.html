@@ -115,14 +115,14 @@
         Dit document beschrijft versie <strong>0.5</strong> van het onderliggende datamodel 
         van de Rijksdienst voor het Cultureel Erfgoed (RCE). 
         Voor meer informatie over het datamodel en de bijbehorende resources, zie: 
-        <a href="https://cultureelerfgoed.github.io/RCE-datamodel/">RCE Datamodel 0.5</a>.
+        <a href="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/Logisch model 0.5.drawio.svg">RCE Datamodel 0.5</a>.
       </p>
     </section>
-    <section id="genealogie-model">
-      <h2>Genealogie van het model</h2>
-      <p>In deze sectie wordt de genealogie van het model beschreven.</p>
-      <p>Het huidige model is gebaseerd op het CHO-KENNIS-model, dat in het verleden binnen de RCE is geïmplementeerd. Het RCE-model wijkt op de volgende punten af van CHO-KENNIS...</p>
-</section>
+    <section id="model-genealogie">
+  <h2>Genealogie van het model</h2>
+  <p>In deze sectie wordt de ontstaansgeschiedenis van het huidige model toegelicht.</p>
+  <p>Het model is ontwikkeld op basis van het eerder binnen de RCE gebruikte CHO-KENNIS-model. Hoewel dat oorspronkelijke model hier niet in detail wordt besproken, biedt deze sectie een overzicht van de belangrijkste wijzigingen ten opzichte van de vorige versie. Deze toelichting is met name bedoeld voor gebruikers die bekend zijn met beide modellen.</p>
+    </section>
   
 
     <section id="model-structuur">
@@ -133,7 +133,7 @@
         het historisch landschap en de rijkscollectie kunstvoorwerpen. Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.
       </p>
 
-      <section id="niveaus-model">
+      <section id="model-lagen">
         <h3>Lagen</h3>
         <p>
           Het model is opgebouwd uit lagen die samen de
@@ -164,10 +164,10 @@
         <article>
           <h4><i>classificatie-laag</i></h4>
           <p>
-            Op dit niveau worden objecten ingedeeld in hoofd- en subclassificaties. Deze objectklassen zijn semantisch met elkaar verbonden, waardoor objecten in verschillende contexten kunnen worden geïnterpreteerd en toegepast.
+            Op dit niveau worden objecten ingedeeld in hoofd- en subclassificaties. Deze objectktypen zijn semantisch met elkaar verbonden, waardoor objecten in verschillende contexten kunnen worden geïnterpreteerd en toegepast.
           </p>
           <p>
-            Elke klasse biedt een alternatieve insteek om toegang tot data te
+            Elke type biedt een alternatieve insteek om toegang tot data te
             verkrijgen. Naast hiërarchische structuren kunnen ook associatieve
             verbanden worden gelegd, bijvoorbeeld tussen verwante types of
             thematieken. De classificatie-laag is bovendien uitbreidbaar en
@@ -243,6 +243,8 @@
   />
 </figure>
 
+
+
   </article>
 
   <article>
@@ -269,6 +271,20 @@
     style="width: 500px; height: auto; border-radius: 8px;"
   />
 </figure>
+<p>Binnen de archeologie zijn er de volgende relaties.</p>
+
+<p>In de archeologie worden verschillende lagen van samenhang gebruikt om vondsten en sporen logisch en overzichtelijk te ordenen. Deze lagen geven structuur aan hoe we archeologische informatie binnen de RCE begrijpen, documenteren en beschermen.
+
+We beginnen op het hoogste niveau met het archeologisch onderzoeksgebied. Dit is het geografische gebied waarop een archeologisch onderzoek zich richt. Binnen zo’n onderzoeksgebied kunnen meerdere vindplaatsen liggen. Een vindplaats is een locatie waar daadwerkelijk archeologische resten zijn aangetroffen – in de vorm van vondsten en/of sporen in een aardkundige context – en waar dus sprake is van menselijke activiteit in het verleden.
+
+Binnen een vindplaats kunnen zich één of meerdere archeologische complexen bevinden. Een complex is een samenhangende groep van vondsten en/of grondsporen die in tijd en ruimte met elkaar verbonden zijn. Denk bijvoorbeeld aan een nederzetting of een grafveld, waarbij de onderdelen functioneel en/of chronologisch samenhangen.
+
+Een archeologisch terrein is vervolgens een concreet afgebakend deel van het landschap waarin zich archeologische resten bevinden of bevonden hebben. Binnen een terrein kunnen meerdere complexen liggen. Meerdere terreinen kunnen op hun beurt weer samen worden aangemerkt als een archeologisch rijksmonument. Een goed voorbeeld hiervan is een groep grafheuvels: elk afzonderlijk een archeologisch terrein, maar gezamenlijk van nationale betekenis en daarom beschermd als monument.
+
+Tot slot zijn er de vondsten en grondsporen zelf. Dit zijn de kleinste, tastbare elementen van het archeologisch erfgoed. Ze vormen het directe bewijs van menselijke activiteiten in het verleden en liggen aan de basis van verdere interpretatie en reconstructie.</p>
+
+
+<p>Voorbeeld</p>
 
   </article>
 
@@ -347,7 +363,7 @@
     Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten zoals tekstobjecten of beeld- en audiovisuele objecten – zijn eraan gerelateerd. 
   </p>
   <p>
-    De cultuurhistorische objecten zijn vooralsnog onderverdeeld in de volgende klassen of typen:
+    De cultuurhistorische objecten zijn vooralsnog onderverdeeld in de volgende entiteiten of typen:
   </p>
   
   <style>
@@ -439,47 +455,7 @@
         </article>
 <br>
         <p>De onderstaande visualisatie geeft inzicht in de samenhang tussen archeologische objecten, hun typen en onderlinge relaties zoals vastgelegd in het model. Alle getoonde objecten zijn van het type cultuurhistorisch object.</p>
-       <figure style="
-  width: 100%;
-  margin: 1.5em 0;
-  padding: 1em;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: auto;
-">
-  <img 
-    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_archeologie.drawio.svg" 
-    alt="Visualisatie van samenhang archeologie van logisch model" 
-    style="width: 600px; max-width: none; height: auto; border-radius: 8px;"
-  />
-</figure>
-
-            <br>
-            <br>
-             <p>De onderstaande visualisatie geeft inzicht in de typering tussen vondsten zoals vastgelegd in het model. Alle getoonde objecten zijn van het type cultuurhistorisch object.</p>
-        <figure style="
-  width: 100%;
-  margin: 1.5em 0;
-  padding: 1em;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
-  display: flex;
-  justify-content: flex-start;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: auto;
-">
-  <img 
-    src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_vondsten.drawio.svg" 
-    alt="Visualisatie van samenhang vondsten van logisch model" 
-    style="width: 550px; max-width: none; height: auto; border-radius: 8px;"
-  />
-</figure>
-
+     
             </article>
 </section>
       <section>
@@ -629,7 +605,7 @@
     <p>In deze sectie worden het cultuurhistorisch object en zijn typen beschreven, evenals de bijbehorende attributen.</p>
  <article>
   <h3><i>cultuurhistorisch_object</i></h3>
-  <p>In deze sectie wordt het cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
+  <p>In deze sectie wordt de entiteit cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
     <table class="def">
       <thead>
         <tr>
@@ -677,7 +653,7 @@
 
   <article>
     <h3><i>archeobotanische vondst</i></h3>
-    <p>In deze sectie worden de archeobotanische vondst en de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie worden de entiteit archeobotanische vondst en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -708,7 +684,7 @@
 
   <article>
     <h3><i>archeozoölogische vondst</i></h3>
-    <p>In deze sectie worden de archeozoölogische vondst en de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie worden de entiteit archeozoölogische vondst en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -763,7 +739,7 @@
 
   <article>
     <h3><i>archeologisch complex</i></archeologisch></h3>
-    <p>In deze sectie worden de archeologisch complex en de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie worden de entiteit archeologisch complex en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -806,7 +782,7 @@
 
   <article>
     <h3><i>archeologisch grondspoor</i></h3>
-    <p>In deze sectie worden de archeologisch grondspoor en de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie worden de entiteit archeologisch grondspoor en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -849,7 +825,7 @@
 
   <article>
     <h3><i>archeologisch monster</i></h3>
-    <p>In deze sectie worden de archeologisch monster en de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie worden de entiteit archeologisch monster en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -880,7 +856,7 @@
   
   <article>
   <h3><i>archeologisch onderzoeksgebied</i></h3>
-  <p>In deze sectie worden het archeologisch onderzoeksgebied en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit archeologisch onderzoeksgebied en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -904,7 +880,7 @@
 
 <article>
   <h3><i>archeologisch terrein</i></h3>
-  <p>In deze sectie worden het archeologisch terrein en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit archeologisch terrein en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -928,7 +904,7 @@
 
 <article>
   <h3><i>acheologische vindplaats</i></h3>
-  <p>In deze sectie worden de acheologische vindplaats en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit acheologische vindplaats en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -964,7 +940,7 @@
 
  <article>
   <h3><i>artefact vondst</i></h3>
-  <p>In deze sectie worden de artefact vondst en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit artefact vondst en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1012,7 +988,7 @@
 
 <article>
   <h3><i>archeologisch terrein</i></h3>
-  <p>In deze sectie worden het archeologisch terrein en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit archeologisch terrein en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1036,7 +1012,7 @@
 
 <article>
   <h3><i>rijksmonument</i></h3>
-  <p>In deze sectie worden het rijksmonument en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit rijksmonument en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1084,7 +1060,7 @@
 
 <article>
   <h3><i>rijksmonument complex</i></h3>
-  <p>In deze sectie worden het rijksmonument complex en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit rijksmonument complex en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1108,7 +1084,7 @@
 
 <article>
   <h3><i>stads- en dorpsgezicht</i></h3>
-  <p>In deze sectie worden het stads- en dorpsgezicht en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit stads- en dorpsgezicht en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1156,7 +1132,7 @@
 
 <article>
   <h3><i>werelderfgoed</i></h3>
-  <p>In deze sectie worden het werelderfgoed en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit werelderfgoed en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1194,11 +1170,11 @@
 </section>
 <section id="tekstobject">
     <h3>Tekstobject</h3>
-    <p>In deze sectie wordt het tekstobject en worden de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie wordt de entiteit tekstobject en worden de bijbehorende attributen beschreven.</p>
 </section>
 <section id="beel-daudio-visueelobject">
     <h3>Beeld-audio-visueel object</h3>
-    <p>In deze sectie wordt het beeld-audio-visueel object en worden de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie wordt de entiteit beeld-audio-visueel object en worden de bijbehorende attributen beschreven.</p>
 </section>
 <section id="kennisregistratie">
     <h3>Kennisregistratie</h3>
@@ -1206,7 +1182,7 @@
 
     <article>
   <h3><i>kennis_registratie</i></h3>
-  <p>In deze sectie wordt de kennisregistratie en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
+  <p>In deze sectie wordt de entiteit kennisregistratie en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1266,7 +1242,7 @@
 
 <article>
   <h3><i>gebeurtenis</i></h3>
-  <p>In deze sectie worden de gebeurtenis en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit gebeurtenis en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1290,7 +1266,7 @@
 
 <article>
   <h3><i>datering</i></h3>
-  <p>In deze sectie worden datering en de bijbehorende attributen beschreven.</p>
+  <p>In deze sectie worden de entiteit datering en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1329,7 +1305,7 @@
 </section>
 <section id="locatieregistratie">
     <h3>Locatieregistratie</h3>
-    <p>In deze sectie wordt de locatieregistratie en worden de bijbehorende attributen beschreven.</p>
+    <p>In deze sectie wordt de entiteit locatieregistratie en worden de bijbehorende attributen beschreven.</p>
 </section>
 </section>
 
@@ -1337,6 +1313,38 @@
     <h2>Implementatie van het model</h2>
     <p>In deze sectie wordt de implementatie van het model beschreven.</p>
     <p></p>
+</section>
+<section id="changelog">
+  <h2>Changelog entiteiten en attributen</h2>
+  <p>Overzicht van wijzigingen aan het model.</p>
+
+  <table class="def">
+    <thead>
+      <tr>
+        <th>Versie</th>
+        <th>Wijzigingsdatum</th>
+        <th>Type wijziging</th>
+        <th>Element</th>
+        <th>Beschrijving</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0.5</td>
+        <td>2025-06-19</td>
+        <td>nieuwe entiteit</td>
+        <td><code>Stedenbouwkundig_morfologische_aanduiding</code></td>
+        <td>Toegevoegd aan entiteit <em>Kennisregistratie</em>.</td>
+      </tr>
+      <tr>
+        <td>0.5</td>
+        <td>2025-06-19</td>
+        <td>nieuwe attribuut</td>
+        <td><code>stedenbouwkundig_morfologische_aanduiding</code></td>
+        <td>Toegevoegd aan entiteit <em>Stedenbouwkundig_morfologische_aanduiding</em>.</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 </body>
