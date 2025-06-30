@@ -43,6 +43,49 @@
         ]
       };
     </script>
+  <style>
+aside.toelichting {
+  border-left: 3px solid #6699cc;       /* zachtere blauw */
+  background-color: #f9fbfc;            /* lichtere achtergrond */
+  padding: 1em 1.2em;                   /* iets strakker */
+  margin: 1.5em 0;
+  border-radius: 4px;                   /* minder afgerond */
+  font-size: 0.95em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* subtiele schaduw */
+}
+
+aside.toelichting p {
+  margin-top: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+aside.toelichting dl {
+  margin: 1em 0 0 0;
+}
+
+aside.toelichting dt {
+  font-weight: 600;
+  margin-top: 0.8em;
+  color: #004080;
+}
+
+aside.toelichting dd {
+  margin: 0.2em 0 0.5em 1.5em;
+  color: #333;
+}
+
+aside.toelichting .toelichting-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #004080;
+  margin-bottom: 0.5em;
+}
+</style>
+
+
+
+
 
     <style>
       table.bordered {
@@ -124,7 +167,7 @@
   <p>Het huidige model is gebaseerd op het CHO-KENNIS-model, dat in het verleden binnen de Rijksdienst voor het Cultureel Erfgoed (RCE) is geïmplementeerd. Het RCE-model wijkt – los van uitbreidingen en aanvullingen – op de volgende structurele punten af van CHO-KENNIS:</p>
   <ul>
     <li>Het model is uitgebreid met niet-cultuurhistorische objecten die het cultuurhistorisch object beschrijven of verbeelden.</li>
-    <li>Er is een locatieregistratie toegevoegd om, naast gegevens uit de Basisregistratie Adressen en Gebouwen (BAG) en de Basisregistratie Kadaster (BRK), ook andere adres- en locatiegegevens beter te kunnen koppelen.</li>
+    <li>Er is een locatieregistratie toegevoegd om, naast gegevens uit de Basisregistratie Adressen en Gebouwen (BAG) en de Basisregistratie Kadaster (BRK), ook andere adres- en locatiegegevens te kunnen koppelen.</li>
     <li>Er is een standplaatsregistratie toegevoegd om de plaats van met name een kunstobject vast te leggen.</li>
   </ul>
 </section>
@@ -132,7 +175,7 @@
    <section id="basiscomponenten-model">
       <h2>Basiscomponenten van het model</h2>
       <p>
-    Het model is ontworpen met het oog op normalisatie, herbruikbaarheid en interoperabiliteit. Het bestaat uit twee hoofdtypen entiteiten: 
+    Het model is ontworpen met het oog op normalisatie, herbruikbaarheid en interoperabiliteit van de RCE data. Het bestaat uit twee hoofdtypen entiteiten: 
     <strong>object</strong> en <strong>registratie</strong>, waarbij elk object en registratie bestaat uit specifieke gegevens ofwel attributen.
   </p>
       <br>
@@ -142,13 +185,27 @@
 <p>
   Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten – zoals tekst-, beeld- en audiovisuele objecten – zijn eraan gerelateerd.
 </p>
-<p>Binnen de cultuurhistorische objecten worden de volgende gegevens vastgelegd:</p>
+<aside class="toelichting">
+  <div class="toelichting-title">Toelichting</div> 
+  <ul>
+    <li><strong>Tekstobject:</strong> een boek waarin een rijksmonument wordt beschreven.</li>
+    <li><strong>Beeldobject:</strong> een foto van een archeologisch artefact of van een opgraving.</li>
+    <li><strong>Audiovisueel object:</strong> een film waarin verslag wordt gedaan van een opgraving.</li>
+    <li><strong>Audio object:</strong> een geluidsopname van een interview met een architect.</li>
+  </ul>
+</aside>
+<p>Binnen de cultuurhistorische objecten (CHO) worden de volgende gegevens vastgelegd:</p>
+
 <ul>
   <li>
     <strong>Formele gegevens</strong><br>
-    Gegevens met een officiële status die formeel zijn vastgesteld door de RCE en/of wettelijk zijn bepaald – zoals registergegevens in het monumentenregister. 
-    Deze gegevens zijn objectief van aard en kennen geen alternatieve interpretaties.
+    Gegevens met een officiële status die formeel zijn vastgesteld door de RCE. 
+    Deze gegevens zijn objectief en/of identificerend van aard en kennen geen alternatieve interpretaties, zoals kennis- of locatiegegevens.
   </li>
+  <aside class="toelichting">
+     <div class="toelichting-title">Toelichting</div> 
+  De functie van een gebouw is een kennisgegeven, omdat deze in de loop van de tijd kan veranderen. De aard van een rijksmonument — of het archeologisch of gebouwd is — is formeel vastgelegd door de RCE en is daarom een CHO-gegeven."
+  </aside>
   <li>
     <strong>Relationele gegevens</strong><br>
     Gegevens die relaties leggen tussen cultuurhistorische objecten onderling. Ze geven de samenhang tussen deze objecten aan.
@@ -224,7 +281,7 @@
       <section>
   <h4>Registratie</h4>
   <p>
- De registratie omvat gegevens die de inhoudelijke kennis, geografische ligging en fysieke standplaats van een cultuurhistorisch object beschrijven. Deze registratie weerspiegelt de formeel vastgelegde informatie die de Rijksdienst voor het Cultureel Erfgoed documenteert in haar rol als kennisinstituut."
+ De registratie omvat gegevens die de inhoudelijke kennis, geografische ligging en fysieke standplaats van een cultuurhistorisch object beschrijven. Deze registratie beschrijft de informatie die de Rijksdienst voor het Cultureel Erfgoed documenteert in haar rol als kennisinstituut vastlegd.
 </p>
 </section>
 
@@ -253,8 +310,9 @@
       <article>
         <h5><i>kennisregistratie</i></h5>
         <p>
-        De kennisregistratie omvat gegevens die de inhoudelijke kennis over een cultuurhistorisch object beschrijven, zoals stijl, type, naam en omschrijving. Deze informatie is vaak gebaseerd op wetenschappelijk onderzoek of documentatie.
+        De kennisregistratie omvat gegevens die de inhoudelijke kennis over een cultuurhistorisch object beschrijven, zoals functie, stijl, type, naam en omschrijving. Deze informatie is vaak gebaseerd op wetenschappelijk onderzoek of vloeit voort uit de wettelijke taken van de RCE.
         </p>
+ 
         <figure style="
   width: 100%;
   margin: 1.5em 0;
