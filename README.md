@@ -10,7 +10,7 @@ Het doel van deze repository is om structuur, documentatie en specificaties te b
 
 De repository zal onder andere bevatten:
 - De formele beschrijving van het datamodel (in ReSpec-formaat)
-- Ontwikkelnotities en versies van het model
+- Ontwikkelnotities en (logisch en fysieke) versies van het model
 - Eventuele bijbehorende vocabularia of referentiedata
 
 ## Publicatie
