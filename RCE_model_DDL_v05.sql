@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE grondspoor (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -77,12 +81,15 @@ CREATE TABLE datering (
   FOREIGN KEY (datering_methode) REFERENCES datering_methode(id)
 );
 
+<<<<<<< HEAD
+=======
 CREATE TABLE bronverwijzing (
   id INT PRIMARY KEY,
   kennisregistratie_id INT,
   FOREIGN KEY (kennisregistratie_id) REFERENCES kennisregistratie(id)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 -- Dit is een tabel uit kennisregistratie
 CREATE TABLE omschrijving (
   id INT PRIMARY KEY,
@@ -93,6 +100,8 @@ CREATE TABLE omschrijving (
   FOREIGN KEY (omschrijving_type) REFERENCES omschrijving_type(id)
 );
 
+<<<<<<< HEAD
+=======
 CREATE TABLE bouwkundige_kwaliteit (
   id INT PRIMARY KEY,
   kennisregistratie_id INT,
@@ -101,6 +110,7 @@ CREATE TABLE bouwkundige_kwaliteit (
   FOREIGN KEY (bouwkundige_staat) REFERENCES bouwkundige_staat(id)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 -- Dit is een tabel uit kennisregistratie
 CREATE TABLE naam (
   id INT PRIMARY KEY,
@@ -138,7 +148,11 @@ CREATE TABLE kennisregistratie (
   FOREIGN KEY (kennisdomein) REFERENCES kennisdomein(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE cultuurhistorisch_object (
   id INT PRIMARY KEY,
   vertrouwelijk_aanduiding VARCHAR(255), -- uri
@@ -146,7 +160,11 @@ CREATE TABLE cultuurhistorisch_object (
   FOREIGN KEY (vertrouwelijk_aanduiding) REFERENCES vertrouwelijk_aanduiding(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE vondsten (
   id INT PRIMARY KEY,
   cho_id INT, 
@@ -162,7 +180,11 @@ CREATE TABLE vondsten (
   FOREIGN KEY (verzamelwijze) REFERENCES verzamelwijze(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE artefact_vondst (
   id INT PRIMARY KEY,
   cho_id INT, 
@@ -170,7 +192,11 @@ CREATE TABLE artefact_vondst (
   FOREIGN KEY (cho_id) REFERENCES cultuurhistorisch_object(id),
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE vindplaats (
  id INT PRIMARY KEY,
   cho_id INT,
@@ -182,6 +208,10 @@ CREATE TABLE vindplaats (
   FOREIGN KEY (archeologisch_onderzoeksgebied_id) REFERENCES archeologisch_onderzoeksgebied(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE monster (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -195,7 +225,11 @@ CREATE TABLE monster (
   FOREIGN KEY (monster_type) REFERENCES  monster_type(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE botanische_vondst (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -206,7 +240,11 @@ CREATE TABLE botanische_vondst (
   FOREIGN KEY (omvang) REFERENCES omvang(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE zoologische_vondst (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -216,7 +254,11 @@ CREATE TABLE zoologische_vondst (
   FOREIGN KEY (monster_id) REFERENCES monster(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE monsters (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -230,7 +272,11 @@ CREATE TABLE monsters (
   FOREIGN KEY (monster_type) REFERENCES monster_type(id),
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE grondsporen (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -245,26 +291,42 @@ CREATE TABLE grondsporen (
   FOREIGN KEY (spoor_type) REFERENCES spoor_type(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE spoor_type (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE omvang (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE monstertype (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE zoologische_vondst (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -299,7 +361,11 @@ CREATE TABLE soort (
   FOREIGN KEY (aanvullend_onderzoek) REFERENCES aanvullend_onderzoek(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE archeologisch_complex (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -311,7 +377,11 @@ CREATE TABLE archeologisch_complex (
   FOREIGN KEY (archeologisch_complextype) REFERENCES archeologisch_complextype(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE archeologisch_terrein (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -319,7 +389,11 @@ CREATE TABLE archeologisch_terrein (
   FOREIGN KEY (cho_id) REFERENCES cultuurhistorisch_object(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE rijksmonument (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -336,7 +410,11 @@ CREATE TABLE rijksmonument (
   FOREIGN KEY (juridische_status) REFERENCES juridische_status(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE werelderfgoed (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -346,7 +424,11 @@ CREATE TABLE werelderfgoed (
   FOREIGN KEY (cho_id) REFERENCES cultuurhistorisch_object(id),
   FOREIGN KEY (werelderfgoed_type) REFERENCES werelderfgoed_type(id)
 );
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE stads_en_dorpsgezicht (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -359,7 +441,11 @@ CREATE TABLE stads_en_dorpsgezicht (
   FOREIGN KEY (gezicht_status) REFERENCES gezicht_status(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE samenhang (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -401,7 +487,11 @@ CREATE TABLE basisregistratie (
 -- Dit is een tabel uit locatieregistratie
 CREATE TABLE basisregistratie_kadaster (
   id INT PRIMARY KEY,
+<<<<<<< HEAD
+  basis_registratie_id bav_id INT,
+=======
   basis_registratie_id INT UNIQUE NOT NULL,
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   gemeentecode VARCHAR(255), -- uri
   gemeentenaam VARCHAR(255), -- uri
   provinciecode VARCHAR(255), --uri
@@ -460,6 +550,19 @@ CREATE TABLE geometrie (
   FOREIGN KEY (ondergrond_gezicht) REFERENCES ondergrond_gezicht(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE afbeelding (
+  id INT PRIMARY KEY,
+  bav_id INT,
+  soort_afbeelding VARCHAR(255), -- uri
+  toponiem VARCHAR(255), -- uri
+  trefwoord VARCHAR(255), -- uri
+  geografisch trefwoord VARCHAR(255), -- uri
+  persoonstrefwoord VARCHAR(255), -- uri
+  hoofdcollectie VARCHAR(255), -- uri
+  collectie VARCHAR(255), -- uri
+=======
 CREATE TABLE afbeelding (
   id INT PRIMARY KEY,
   bav_id VARCHAR(255),
@@ -470,10 +573,59 @@ CREATE TABLE afbeelding (
   persoonstrefwoord VARCHAR(255),
   hoofdcollectie VARCHAR(255),
   collectie VARCHAR(255),
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   techniek INT,
   uitsluitingsverzoek_id INT,
   vervaardiging_datum DATE,
   project_code VARCHAR(255),
+<<<<<<< HEAD
+  documentnummer VARCHAR(255),
+  alternatiefnummer VARCHAR(255),
+  soort_alternatiefnummer VARCHAR(255),
+  begin_periode_complextype VARCHAR(255),
+  eind_periode_complextype VARCHAR(255),
+  scheepswraknummer VARCHAR(255),
+  maritieme_archeologie_locatie VARCHAR(255),
+  invoerder_record VARCHAR(255),
+  invoerbron VARCHAR(255),
+  historisch_adres VARCHAR(255),
+  FOREIGN KEY (bav_id) REFERENCES beeld_audio_visueel_object(id),
+  FOREIGN KEY (soort_afbeelding) REFERENCES soort_afbeelding(id),
+  FOREIGN KEY (techniek) REFERENCES techniek(id),
+  FOREIGN KEY (toponiem) REFERENCES toponiem(id),
+  FOREIGN KEY (trefwoord) REFERENCES trefwoord(id),
+  FOREIGN KEY (persoonstrefwoord) REFERENCES persoonstrefwoord(id),
+  FOREIGN KEY (hoofdcollectie) REFERENCES hoofdcollectie(id),
+  FOREIGN KEY (collectie) REFERENCES collectie(id),
+  FOREIGN KEY (uitsluitingsverzoek_id) REFERENCES uitsluitingsverzoek(id)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE vervaardiger (
+  id INT PRIMARY KEY,
+  naam_vervaardiger VARCHAR(255), -- uri
+  rol_vervaardiger VARCHAR(255) -- uri
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE actor (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE rol (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE analoog (
+  id INT PRIMARY KEY,
+  afbeelding_id bav_id INT,
+=======
   document_nummer VARCHAR(255),
   alternatief_nummer VARCHAR(255),
   soort_alternatief_nummer VARCHAR(255),
@@ -498,6 +650,7 @@ CREATE TABLE vervaardiger (
 CREATE TABLE analoog (
   id INT PRIMARY KEY,
   afbeelding_id INT UNIQUE NOT NULL,
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   opschrift_id INT,
   vindplaats_depot VARCHAR(255),
   titel VARCHAR(255),
@@ -512,10 +665,22 @@ CREATE TABLE analoog (
   blad_minuutplan VARCHAR(255),
   objectnummer_minuutplan VARCHAR(255),
   beschrijving VARCHAR(255),
+<<<<<<< HEAD
+  sectie_verzamelplan VARCHAR(255),
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   FOREIGN KEY (afbeelding_id) REFERENCES afbeelding(id),
   FOREIGN KEY (opschrift_id) REFERENCES opschrift(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+CREATE TABLE tekst_object (
+  id INT PRIMARY KEY,
+  uitgever_id INT,
+  publicatie_status VARCHAR(255), -- uri
+  opslag_locatie VARCHAR(255), -- uri
+=======
 CREATE TABLE tekst_object (
   id INT PRIMARY KEY,
   uitgever_id INT,
@@ -523,10 +688,19 @@ CREATE TABLE tekst_object (
   redacteur_id INT,
   publicatie_status INT,
   opslag_locatie INT,
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   titel VARCHAR(255),
   digitale_link VARCHAR(255),
   plaatsingscode_bibliotheek VARCHAR(255),
   heeft_digitale_versie boolean,
+<<<<<<< HEAD
+  FOREIGN KEY (uitgever_id) REFERENCES uitgever(id),
+  FOREIGN KEY (publicatie_status) REFERENCES publicatie_status(id),
+  FOREIGN KEY (opslag_locatie) REFERENCES opslag_locatie(id)
+);
+
+-- Dit is een tabel uit tekst_object
+=======
   FOREIGN KEY (uitgever_id) REFERENCES uitgever(id)
 );
 
@@ -546,16 +720,25 @@ CREATE TABLE cho_tekst_object (
   FOREIGN KEY (tekst_object_id) REFERENCES tekst_object(id)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE rapport (
   id INT PRIMARY KEY,
   to_id VARCHAR(255),
   reeks_id INT,
+<<<<<<< HEAD
+  isbn  VARCHAR(255),
+=======
   dans_doi  VARCHAR(255),
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   reeks_volgnummer VARCHAR(255),
   FOREIGN KEY (to_id) REFERENCES tekst_object(id) UNIQUE,
   FOREIGN KEY (reeks_id) REFERENCES reeks(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE tijdschrift (
   id INT PRIMARY KEY,
   to_id INT,
@@ -563,6 +746,10 @@ CREATE TABLE tijdschrift (
   FOREIGN KEY (to_id) REFERENCES tekst_object(id) UNIQUE
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE artikel (
   id INT PRIMARY KEY,
   to_id INT,
@@ -570,18 +757,26 @@ CREATE TABLE artikel (
   FOREIGN KEY (to_id) REFERENCES tekst_object(id) UNIQUE
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 CREATE TABLE verwervingswijze_zoologisch (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE spoortype (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE verzamelwijze (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -613,6 +808,12 @@ CREATE TABLE naam_stijl_en_cultuur (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+CREATE TABLE zaak (
+  id INT PRIMARY KEY,
+  cho_id bav_id INT,
+=======
 CREATE TABLE archis_waarneming_nummer (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -634,6 +835,7 @@ CREATE TABLE rce_zaaknummer (
 CREATE TABLE zaak (
   id INT PRIMARY KEY,
   cho_id INT UNIQUE NOT NULL,
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   zaaknummer VARCHAR(255),
   FOREIGN KEY (cho_id) REFERENCES cultuurhistorisch_object(id)
 );
@@ -665,12 +867,20 @@ CREATE TABLE provincie (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE bag_pand (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE bag_verblijfsobject (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -684,18 +894,30 @@ CREATE TABLE plaatsnaam (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE overheid.nl_gemeente (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE overheid.nl_provincie (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE dans_doi (
   doi VARCHAR(255),
   label VARCHAR(255)
@@ -721,18 +943,26 @@ CREATE TABLE zoologische_soort (
   FOREIGN KEY (soort_id) REFERENCES soort(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
 CREATE TABLE botanische_zoo_naam (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE botanische_zoo_onderdeel (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE botanische_zoo_behoudstatus (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -759,26 +989,42 @@ CREATE TABLE type_gevonden_depositie (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE aanvullend_onderzoek (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE aard_monument (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE bebouwde_kom (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE juridische_status (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -832,7 +1078,11 @@ CREATE TABLE situering (
   uri VARCHAR(255),
   label VARCHAR(255)
 );
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object en kennis- en locatieregistratie
+=======
 -- Dit is een tabel uit cho en kennis- en locatieregistratie
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE vertrouwelijk_aanduiding (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -880,13 +1130,21 @@ CREATE TABLE woonplaatsnaam (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE werelderfgoed_type (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE gezicht_status (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -932,50 +1190,102 @@ CREATE TABLE polygoon (
   FOREIGN KEY (geometrie_id) REFERENCES geometrie(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE creative_commons (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE rechthebbende (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE type_recht (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE cultuurhistorische_thesaurus (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE techniek (
+  id INT PRIMARY KEY,
+  naam_techniek VARCHAR(255), -- uri
+  FOREIGN KEY (naam_techniek) REFERENCES naam_techniek(id)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
 CREATE TABLE techniek (
    id INT PRIMARY KEY,
   naam_techniek VARCHAR(255),
   FOREIGN KEY (naam_techniek) REFERENCES naam_techniek(id)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE opschrift (
    id INT PRIMARY KEY,
   taal_inscriptie VARCHAR(255),
   beschrijving VARCHAR(255),
   datum_inscriptie DATE,
+<<<<<<< HEAD
+  FOREIGN KEY (taal_inscriptie) REFERENCES  taal_inscriptie(id)
+);
+
+-- Dit is een tabel uit kennisregistratie
+=======
   FOREIGN KEY (analoog_id) REFERENCES analoog(id)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE taal (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE taal_inscriptie (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE collectie (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE soort_afbeelding (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -1010,6 +1320,19 @@ CREATE TABLE soort_naam (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE geografische_aanduiding (
+  id INT PRIMARY KEY,
+  locatie_of_standplaats VARCHAR(255),
+  specifieke_plaats VARCHAR(255),
+  straatnaam VARCHAR(255),
+  straatnummer VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object 
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE digitaal (
   id INT PRIMARY KEY,
   afbeelding_id VARCHAR(255),
@@ -1028,6 +1351,58 @@ CREATE TABLE type_naam (
 );
 
 -- Dit is een tabel uit kennisregistratie
+<<<<<<< HEAD
+CREATE TABLE geografisch_trefwoord (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE persoonstrefwoord (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE trefwoord (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE techniek (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE naam_techniek (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE hoofdcollectie (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+CREATE TABLE toponiem (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit kennisregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE archeologische_toestand (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -1060,6 +1435,10 @@ CREATE TABLE meeteenheid (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE uitsluitingsverzoek (
   id INT PRIMARY KEY,
   aanvrager_uitsluiting VARCHAR(255),
@@ -1067,9 +1446,16 @@ CREATE TABLE uitsluitingsverzoek (
   behandelaar_uitsluiting VARCHAR(255),
   rechten_bijzonderheden VARCHAR(255),
   reden_uitsluiting VARCHAR(255),
+<<<<<<< HEAD
+  opmerking_rede_uitsluiting VARCHAR(255)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
   oprmerking_rede_uitsluiting VARCHAR(255)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE opdracht (
   id INT PRIMARY KEY,
   FOOL_opdrachtgever VARCHAR(255),
@@ -1102,12 +1488,20 @@ CREATE TABLE stedenbouwkundig_morfologische_aanduiding (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE type_archeologisch (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE functie (
   id INT PRIMARY KEY,
   kennisregistratie_id INT,
@@ -1150,6 +1544,10 @@ CREATE TABLE naam_type_kenmerk (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE datering_eind (
   id INT PRIMARY KEY,
   datering_id VARCHAR(255),
@@ -1160,6 +1558,10 @@ CREATE TABLE datering_eind (
   FOREIGN KEY (eind_periode) REFERENCES datering_periode(id)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE geografische_aanduiding (
   id INT PRIMARY KEY,
   locatie_of_standplaats VARCHAR(255),
@@ -1168,7 +1570,11 @@ CREATE TABLE geografische_aanduiding (
   straatnummer VARCHAR(255),
   FOREIGN KEY (audio_visueel_materiaal_id) REFERENCES audio_visueel_materiaal(id)
 );
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE rijksmonument_complex (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -1176,7 +1582,11 @@ CREATE TABLE rijksmonument_complex (
   FOREIGN KEY (cho_id) REFERENCES cultuurhistorisch_object(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE archeologisch_onderzoeksgebied (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -1186,6 +1596,10 @@ CREATE TABLE archeologisch_onderzoeksgebied (
   FOREIGN KEY (archeologisch_complex_id) REFERENCES archeologisch_complex(id)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE behoudmodus (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -1199,22 +1613,39 @@ CREATE TABLE behoudstatus (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE kennisdomein (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE audio-visueel materiaal (
+  id INT PRIMARY KEY,
+  bav_id INT,
+  persoons_onderwerp VARCHAR(255), -- uri
+=======
 CREATE TABLE audio-visueel materiaal (
   id INT PRIMARY KEY,
   bav_id VARCHAR(255),
   persoons_onderwerp VARCHAR(255),
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   geografische_aanduiding_id INT,
   objectnummer VARCHAR(255),
   archiefnummer VARCHAR(255),
   inventarisnummer VARCHAR(255),
+<<<<<<< HEAD
+  datering_van DATE,
+  datering_tot DATE,
+=======
   datering_van datum,
   datering_tot datum,
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   uitgever VARCHAR(255),
   onderwerp VARCHAR(255),
   materiele_omschrijving VARCHAR(255),
@@ -1228,6 +1659,17 @@ CREATE TABLE audio-visueel materiaal (
   collectie_verzameling VARCHAR(255),
   opmerkingen VARCHAR(255),
   FOREIGN KEY (bav_id) REFERENCES beeld_audio_visueel_object(id),
+<<<<<<< HEAD
+  FOREIGN KEY (persoons_onderwerp) REFERENCES persoons_onderwerp(id),
+  FOREIGN KEY (geografische_aanduiding_id) REFERENCES geografische_aanduiding(id)
+);
+
+-- Dit is een tabel uit beeld-audio-visueel object
+CREATE TABLE beeld-audio-visueel object (
+  id INT PRIMARY KEY,
+  vervaardiger VARCHAR(255), -- uri
+  opslag_locatie VARCHAR(255), -- uri
+=======
   FOREIGN KEY (geografische_aanduiding_id) REFERENCES geografische_aanduiding(id)
 );
 
@@ -1236,6 +1678,7 @@ CREATE TABLE beeld-audio-visueel object (
   id INT PRIMARY KEY,
   vervaardiger VARCHAR(255), -- uri
   opslag_locatie VARCHAR(255),
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   titel VARCHAR(255),
   beschrijving_omschrijving VARCHAR(255),
   toon_intern boolean,
@@ -1244,6 +1687,10 @@ CREATE TABLE beeld-audio-visueel object (
   FOREIGN KEY (vervaardiger) REFERENCES vervaardiger(id)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE standplaats_registratie (
   id INT PRIMARY KEY,
   cho_id INT,
@@ -1301,7 +1748,11 @@ CREATE TABLE zoutgehalte (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+=======
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE hoofdstuk (
   id INT PRIMARY KEY,
   to_id VARCHAR(255),
@@ -1314,6 +1765,10 @@ CREATE TABLE hoofdstuk (
   FOREIGN KEY (rapport_id) REFERENCES rapport(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE boek (
   id INT PRIMARY KEY,
   to_id VARCHAR(255),
@@ -1324,18 +1779,49 @@ CREATE TABLE boek (
   FOREIGN KEY (reeks_id) REFERENCES reeks(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+CREATE TABLE reeks (
+  id INT PRIMARY KEY,
+  reeks_naam VARCHAR(255), -- uri
+  issn VARCHAR(255)
+);
+
+-- Dit is een tabel uit tekst_object
+=======
 CREATE TABLE reeks (
   id INT PRIMARY KEY,
   reeks_naam VARCHAR(255),
   issn VARCHAR(255)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE reeks_naam (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+CREATE TABLE uitgever (
+  id INT PRIMARY KEY,
+  to_id INT,
+  uitgever_naam VARCHAR(255), -- uri
+  jaar_van_uitgave VARCHAR(255),
+  plaats_van_uitgave VARCHAR(255), 
+  FOREIGN KEY (to_id) REFERENCES tekst_object(id),
+);
+
+-- Dit is een tabel uit tekst_object
+CREATE TABLE uitgever_naam (
+  id INT PRIMARY KEY,
+  uri VARCHAR(255),
+  label VARCHAR(255)
+);
+
+-- Dit is een tabel uit tekst_object
+=======
 CREATE TABLE uitgever (
   id INT PRIMARY KEY,
   to_id INT,
@@ -1344,19 +1830,41 @@ CREATE TABLE uitgever (
   plaats_van_uitgave VARCHAR(255)
 );
 
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE publicatie_status (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit tekst_object
+CREATE TABLE betrokkene (
+  id INT PRIMARY KEY,
+  to_id INT,
+  actor VARCHAR(255), -- uri
+  rol VARCHAR(255), -- uri
+  volg_nummer VARCHAR(255), 
+  FOREIGN KEY (to_id) REFERENCES tekst_object(id),
+  FOREIGN KEY (actor) REFERENCES actor(id),
+  FOREIGN KEY (rol) REFERENCES rol(id)
+);
+
+
+-- Dit is een tabel uit cultuurhistorisch_object
+=======
 -- Dit is een tabel uit cho
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE archeologisch_complextype (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE datering_periode (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -1364,12 +1872,20 @@ CREATE TABLE datering_periode (
   eind_jaar VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE verwervingswijze_botanisch (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE persoons_onderwerp (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
@@ -1385,12 +1901,20 @@ CREATE TABLE betrokkene (
   FOREIGN KEY (gebeurtenis_id) REFERENCES gebeurtenis(id),
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE degradatie_status (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE degradatie_status (
   id INT PRIMARY KEY,
   kennisregistratie_id INT,
@@ -1407,6 +1931,10 @@ CREATE TABLE datering_methode (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE datering_methode (
   id INT PRIMARY KEY,
   kennisregistratie_id INT,
@@ -1428,15 +1956,29 @@ CREATE TABLE maritiem (
   FOREIGN KEY (vlaggenstaat) REFERENCES vlaggenstaat(id)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object en tekst_object
+CREATE TABLE rechten (
+  id INT PRIMARY KEY,
+  bav_id INT,
+=======
 CREATE TABLE rechten (
   id INT PRIMARY KEY,
   bav_id VARCHAR(255),
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
   creative_commons INT,
   rechthebbende INT,
   type_recht INT,
   copyrights VARCHAR(255),
   copyrights_notitie DATE,
+<<<<<<< HEAD
+  FOREIGN KEY (bav_id) REFERENCES beeld_audio_visueel_object(id),
+  FOREIGN KEY (creative_commons) REFERENCES creative_commons(id),
+  FOREIGN KEY (rechthebbende) REFERENCES rechthebbende(id),
+  FOREIGN KEY (type_recht) REFERENCES type_recht(id)
+=======
   FOREIGN KEY (bav_id) REFERENCES beeld_audio_visueel_object(id)
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 );
 
 -- Dit is een tabel uit kennisregistratie
@@ -1446,29 +1988,49 @@ CREATE TABLE vlaggenstaat (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit locatieregistratie
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE locatieaanduiding_status (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- Dit is een tabel uit beeld-audio-visueel object
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE opslag_locatie (
   url VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE verwervingswijze (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE complextype (
   id INT PRIMARY KEY,
   uri VARCHAR(255),
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE auteur (
   id INT PRIMARY KEY,
   io_id VARCHAR(255),
@@ -1476,6 +2038,10 @@ CREATE TABLE auteur (
   volgorde_nummer VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE redacteur (
   id INT PRIMARY KEY,
   io_id VARCHAR(255),
@@ -1508,6 +2074,10 @@ CREATE TABLE naam_gebeurtenis (
   label VARCHAR(255)
 );
 
+<<<<<<< HEAD
+-- onbekend
+=======
+>>>>>>> a1533043a6f4211f3354392bcfac63b48ecaa324
 CREATE TABLE betrokkene_gebeurtenis (
   betrokkene_id INT,
   gebeurtenis_id INT,
