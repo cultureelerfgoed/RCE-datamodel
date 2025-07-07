@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="nl">
- <head>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RCE datamodel</title>
 
+  <!-- ReSpec configuratie -->
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
   <script class="remove">
     const respecConfig = {
       title: "RCE datamodel",
-      specStatus: "ED",  // 'ED' betekent 'Editor's Draft'; toont standaard Engelse status
+      specStatus: "ED",
       shortName: "rce-datamodel",
       version: "1.0",
-      publishDate: "2025-07-01",
+      publishDate: "2025-07-07",
+
       editors: [
         {
           name: "Patrick Mout",
           company: "Rijksdienst voor het Cultureel Erfgoed",
-          companyURL: "https://cultureelerfgoed.nl",
-        },
+          companyURL: "https://cultureelerfgoed.nl"
+        }
       ],
+
       github: "https://github.com/cultureelerfgoed/RCE-datamodel",
       editorsDraft: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html",
-      edDraftURI: "https://cultureelerfgoed.github.io/RCE-datamodel/",
-      latestVersion: "https://cultureelerfgoed.github.io/RCE-datamodel/",
+      edDraftURI: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html",
+      latestVersion: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html",
+
       format: "markdown",
       license: "cc-by",
-      noRecTrack: true, // voorkomt "This document is part of the W3C..." tekst
-      alternateFormats: [],
+      noRecTrack: true,
+
       localBiblio: {
         "RCE-Datamodel": {
           title: "RCE Datamodel versie 0.5",
@@ -36,18 +40,19 @@
           date: "2025-05-01"
         }
       },
+
       history: [
         {
           date: "2025-06-18",
           description: "Versie 1.0 – huidige versie",
-          url: "https://cultureelerfgoed.github.io/RCE-datamodel/"
+          url: "https://cultureelerfgoed.github.io/RCE-datamodel/rce_datamodel_respec_document.html"
         }
       ]
     };
   </script>
 
+  <!-- CSS styling -->
   <style>
-    /* stijlsheet toelichting, model en voorbeeld */
     aside.toelichting {
       border-left: 3px solid #6699cc;
       background-color: #f9fbfc;
@@ -57,23 +62,22 @@
       font-size: 0.95em;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
+
+    aside.toelichting.breed-uit {
+      margin-left: calc(-2vw);
+      margin-right: calc(-2vw);
+      padding-left: 2vw;
+      padding-right: 2vw;
+      max-width: 100vw;
+      overflow-x: auto;
+    }
+
     aside.toelichting p {
       margin-top: 0;
       font-weight: 500;
       color: #333;
     }
-    aside.toelichting dl {
-      margin: 1em 0 0 0;
-    }
-    aside.toelichting dt {
-      font-weight: 600;
-      margin-top: 0.8em;
-      color: #004080;
-    }
-    aside.toelichting dd {
-      margin: 0.2em 0 0.5em 1.5em;
-      color: #333;
-    }
+
     aside.toelichting .toelichting-title {
       font-weight: 700;
       font-size: 1.1em;
@@ -81,37 +85,52 @@
       margin-bottom: 0.5em;
     }
 
-    /* figuur en afbeelding */
+    aside.toelichting dl {
+      margin: 1em 0 0 0;
+    }
+
+    aside.toelichting dt {
+      font-weight: 600;
+      margin-top: 0.8em;
+      color: #004080;
+    }
+
+    aside.toelichting dd {
+      margin: 0.2em 0 0.5em 1.5em;
+      color: #333;
+    }
+
     figure.model {
       width: 100%;
       margin: 1em 0;
       padding: 1em;
       border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: flex-start;
       overflow-x: auto;
     }
+
     figure.model img {
       height: auto;
       border-radius: 6px;
-      max-width: none;
+      max-width: 100%;
+      display: block;
     }
 
-    /* breedtevarianten */
-    figure.model.breed-400 img { width: 400px; }
-    figure.model.breed-500 img { width: 500px; }
-    figure.model.breed-600 img { width: 600px; }
-    figure.model.breed-625 img { width: 625px; }
-    figure.model.breed-650 img { width: 650px; }
-    figure.model.breed-700 img { width: 700px; }
-    figure.model.breed-800 img { width: 800px; }
-    figure.model.breed-850 img { width: 850px; }
-    figure.model.breed-900 img { width: 900px; }
-    figure.model.breed-1000 img { width: 1000px; }
-    figure.model.breed-1100 img { width: 1100px; }
-    figure.model.breed-1200 img { width: 1200px; }
+    .breed-400 img { width: 400px; }
+    .breed-500 img { width: 500px; }
+    .breed-600 img { width: 600px; }
+    .breed-625 img { width: 625px; }
+    .breed-650 img { width: 650px; }
+    .breed-700 img { width: 700px; }
+    .breed-800 img { width: 800px; }
+    .breed-850 img { width: 850px; }
+    .breed-900 img { width: 900px; }
+    .breed-1000 img { width: 1000px; }
+    .breed-1100 img { width: 1100px; }
+    .breed-1200 img { width: 1200px; }
   </style>
 </head>
 
@@ -134,14 +153,20 @@
     </section>
 
     <section id="doel-model">
-      <h2>Doel van het model</h2>
-      <p>
-        Het RCE datamodel is ontwikkeld om kennisdata en de bijbehorende semantiek vast te leggen. Hierbij ligt de focus op het beschrijven van objecten waarover de RCE inhoudelijke kennis heeft vergaard.
-        <p>
-          Hoewel het model zich momenteel richt op kennisdata, is het in de toekomst uit te breiden om ook procesdata te omvatten, waarmee bijvoorbeeld werkprocessen kunnen worden vastgelegd.
-        </p>
-      </p>
-    </section>
+  <h2>Doel van het model</h2>
+  <p>
+    Het datamodel van de RCE is ontwikkeld om kennis en de bijbehorende betekenis (semantiek) vast te leggen. 
+    De focus ligt op het beschrijven van objecten waar de RCE inhoudelijke kennis over heeft verzameld.
+  </p>
+  <p>
+    Op dit moment richt het model zich vooral op kennisdata, maar het is zo opgezet dat het in de toekomst ook kan worden uitgebreid met procesdata.</p>
+
+  <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Zoals het subsidieregelingenproces binnen de RCE.</p> 
+  </aside>
+</section>
+
 
     <section id="model-status">
       <h2>Status van het model</h2>
@@ -272,7 +297,7 @@
       <section>
   <h4>Registratie</h4>
   <p>
- De registratie omvat gegevens die de inhoudelijke kennis, geografische ligging en fysieke standplaats van een cultuurhistorisch object beschrijft. In het model verdeeld in:
+ De registratie omvat gegevens die de inhoudelijke kennis, geografische ligging en fysieke standplaats van een <strong>cultuurhistorisch object</strong> beschrijft. In het model verdeeld in:
 </p>
 </section>
 
@@ -327,7 +352,7 @@
       <section>
   <h2>Begrippen</h2>
   <p>
-    Begrippen zijn een belangrijk onderdeel van het RCE-datamodel. Ze zorgen ervoor dat informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier wordt vastgelegd. Door begrippen te gebruiken, wordt het makkelijker om informatie te vinden en uit te wisselen.
+    Begrippen zijn een belangrijk onderdeel van het RCE datamodel. Ze zorgen ervoor dat informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier wordt vastgelegd. Door begrippen te gebruiken, wordt het makkelijker om informatie te vinden en uit te wisselen.
   </p>
   <aside class="toelichting">
   <div class="toelichting-title">Toelichting</div> 
@@ -357,9 +382,13 @@
       <h2>Structuur van het model</h2>
       <p>
         Het datamodel vormt een gestructureerde weergave van de objecten in een specifiek kennisdomein, inclusief hun kenmerken en de relaties onderling.
-        <p>Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, gebouwd erfgoed,
-        het historisch landschap en de rijkscollectie kunstvoorwerpen. Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.
+        <p>Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, monumenten,
+        (historisch) landschap en roerend. 
       </p>
+      <aside class="toelichting">
+  <div class="toelichting-title">Toelichting</div> 
+  <p>Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.</p>
+</aside>
 
       <section id="niveaus-model">
         <h3>Lagen</h3>
@@ -545,12 +574,20 @@
 
    <aside class="toelichting">
   <div class="toelichting-title">Model</div>
-  <figure class="model breed-1100">
+  <figure class="model">
     <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect.drawio.svg" 
+      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect1.drawio.svg" 
       alt="Beschrijving van het model"/>
 </figure>
-       
+    </aside>
+    <br>
+    <aside class="toelichting">
+  <div class="toelichting-title">Model</div>
+  <figure class="model">
+    <img 
+      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect2.drawio.svg" 
+      alt="Beschrijving van het model"/>
+</figure>
     </aside>
         
        <section id="feit-gebeurtenis">
@@ -1299,7 +1336,7 @@
  <section id="basiscomponenten-model">
     <h2>Implementatie van het model</h2>
     <p>In deze sectie wordt de implementatie van het model beschreven.</p>
-    <p></p>
+    <p>Een implementatie van het RCE datamodel is het linked datamodel: Cultureel Erfgoed Ontologie.(ceo)</p>
 </section>
 </body>
 </html>
