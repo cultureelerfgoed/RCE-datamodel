@@ -104,6 +104,7 @@ CREATE TABLE analoog (
   FOREIGN KEY (opschrift_id) REFERENCES opschrift(id)
 );
 
+-- Dit is een tabel uit beeld-audio-visueel object
 CREATE TABLE vervaardiger (
   id INT PRIMARY KEY,
   naam_vervaardiger VARCHAR(255), -- uri
