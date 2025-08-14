@@ -13,7 +13,7 @@
       specStatus: "ED",
       shortName: "rce-datamodel",
       version: "1.0",
-      publishDate: "2025-07-07",
+      publishDate: "2025-08-14",
 
       editors: [
         {
@@ -145,9 +145,7 @@
     <section id="sotd">
       <p>
         <p>
-          Dit document is een werkversie (<strong>versie 1.0</strong>) van de documentatie van het RCE datamodel. 
-          Het is opgesteld voor interne bespreking. 
-          Deze versie heeft geen formele status binnen de W3C en vertegenwoordigt geen formeel goedgekeurd beleid van de RCE.
+        Deze werkversie (1.0) van het ReSpec-document is opgesteld voor interne bespreking, met als doel het RCE-datamodel te beschrijven en voor publicatie gereed te maken.
         </p>
       </p>
     </section>
@@ -155,15 +153,15 @@
     <section id="doel-model">
   <h2>Doel van het model</h2>
   <p>
-    Het datamodel van de RCE is ontwikkeld om kennis en de bijbehorende betekenis (semantiek) vast te leggen. 
-    De focus ligt op het beschrijven van objecten waar de RCE inhoudelijke kennis over heeft verzameld.
+Het datamodel van de RCE is ontwikkeld om kennis en de bijbehorende betekenis (semantiek) vast te leggen.</p>
+<p>
+Het beschrijft objecten waarover de RCE inhoudelijke kennis heeft verzameld.
+Momenteel wordt het model vooral toegepast voor kennisdata, maar het is zo ontworpen dat het in de toekomst ook kan worden uitgebreid met procesdata.
   </p>
-  <p>
-    Op dit moment richt het model zich vooral op kennisdata, maar het is zo opgezet dat het in de toekomst ook kan worden uitgebreid met procesdata.</p>
 
   <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div> 
-    <p>Zoals het subsidieregelingenproces binnen de RCE.</p> 
+    <p>Een voorbeeld van procesdata is het proces voor de Woonhuissubsidie.</p> 
   </aside>
 </section>
 
@@ -179,420 +177,248 @@
     </section>
     <section id="genealogie-model">
   <h2>Genealogie van het model</h2>
-  <p>In deze sectie wordt de genealogie van het model beschreven.</p>
+  <p>In dit hoofdstuk wordt de ontstaansgeschiedenis van het model uiteengezet.</p>
   <p>Het huidige model is gebaseerd op het CHO-KENNIS-model, dat in het verleden binnen de Rijksdienst voor het Cultureel Erfgoed (RCE) is geïmplementeerd. Het RCE-model wijkt – los van uitbreidingen en aanvullingen – op de volgende structurele punten af van CHO-KENNIS:</p>
   <ul>
     <li>Het model is uitgebreid met niet-cultuurhistorische objecten die het cultuurhistorisch object beschrijven of verbeelden.</li>
     <li>Er is een locatieregistratie toegevoegd om, naast gegevens uit de Basisregistratie Adressen en Gebouwen (BAG) en de Basisregistratie Kadaster (BRK), ook andere adres- en locatiegegevens te kunnen koppelen.</li>
-    <li>Er is een standplaatsregistratie toegevoegd om de plaats van met name een kunstobject vast te leggen.</li>
+    <li>Er is een standplaatsregistratie toegevoegd om de plaats van met name een kunstvoorwerp vast te leggen.</li>
   </ul>
 </section>
 
-   <section id="basiscomponenten-model">
-      <h2>Basiscomponenten van het model</h2>
-      <p>
-    Het model legt verschillende RCE-gegevensbronnen generiek en uniform vast. Hierdoor ontstaat een eenduidige datastructuur, wordt dubbele opslag voorkomen en kunnen gegevens makkelijker gedeeld en hergebruikt worden. Het model bevat twee hoofdtypen entiteiten: <strong>object</strong> en <strong>registratie</strong>, elk met hun eigen attributen.
-  </p>
-      <br>
-  
-      <section>
-  <h4>Objecten</h4>
-<p>
-  Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten – zoals tekst-, beeld- en audiovisuele objecten – zijn eraan gerelateerd.
-</p>
-<aside class="toelichting">
-  <div class="toelichting-title">Toelichting</div> 
-  <ul>
-    <li>Een Cultuurhistorisch object kan zijn een voorwerp, een gebouw maar ook een gebied, zoals een schilderij, een rijksmonument of een archeologisch terrein.</li>
-    <li>Een tekstobject kan zijn een boek waarin een rijksmonument wordt beschreven.</li>
-    <li>Een beeldobject kan zijn een foto van een archeologisch artefact of van een opgraving.</li>
-    <li>Een audiovisueel object kan zijn een film waarin verslag wordt gedaan van een opgraving.</li>
-    <li>Een audio object kan zijn een geluidsopname van een interview met een architect.</li>
-  </ul>
-</aside>
-<p>Binnen de cultuurhistorische objecten (CHO) worden de volgende gegevens vastgelegd:</p>
+  <section id="uitgangspunt-model">
+  <h2>Uitgangspunten van het model</h2>
+  <p>Dit hoofdstuk beschrijft de fundamentele principes waarop het model is gebaseerd.</p>
+  <p>Het model legt gegevens uit verschillende RCE-databronnen op een generieke en uniforme manier vast, waardoor een eenduidige datastructuur ontstaat. Dit voorkomt dubbele opslag en maakt het eenvoudiger om gegevens te delen en te hergebruiken. 
+  Binnen het model worden twee hoofdtypen onderscheiden: <strong>object</strong> en <strong>registratie</strong>, elk met hun eigen attributen.</p>
+  <br>
 
-<ul>
-  <li>
-    <strong>Formele gegevens</strong><br>
-    Gegevens met een officiële status die formeel zijn vastgesteld door de RCE. 
-    Deze gegevens zijn objectief en/of identificerend van aard en kennen geen alternatieve interpretaties, zoals kennis- of locatiegegevens.
-  </li>
-  <aside class="toelichting">
-     <div class="toelichting-title">Toelichting</div> 
-  De functie van een gebouw is een kennisgegeven, omdat deze in de loop van de tijd kan veranderen. De aard van een rijksmonument — of het archeologisch of gebouwd is — is formeel vastgelegd door de RCE en is daarom een CHO-gegeven."
+  <section>
+    <h4>Objecten</h4>
+    <p>Hier wordt uitgelegd wat in dit model wordt verstaan onder een object en welke rol het speelt.</p>
+    <p>
+      Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten – zoals tekst-, beeld- en audiovisuele objecten – zijn eraan gerelateerd.
+    </p>
+    <aside class="toelichting">
+      <div class="toelichting-title">Toelichting</div> 
+      <ul>
+        <li>Een Cultuurhistorisch object kan zijn een voorwerp, een gebouw maar ook een gebied, zoals een schilderij, een rijksmonument of een archeologisch terrein.</li>
+        <li>Een tekstobject kan zijn een boek waarin een rijksmonument wordt beschreven.</li>
+        <li>Een beeldobject kan zijn een foto van een archeologisch artefact of van een opgraving.</li>
+        <li>Een audiovisueel object kan zijn een film waarin verslag wordt gedaan van een opgraving.</li>
+        <li>Een audio-object kan zijn een geluidsopname van een interview met een architect.</li>
+      </ul>
+    </aside>
+    <p>Binnen het cultuurhistorische object (CHO) worden de volgende gegevens vastgelegd:</p>
+
+    <ul>
+      <li>
+        <strong>Formele gegevens</strong><br>
+        Gegevens met een officiële status die formeel zijn vastgesteld door de RCE. Deze gegevens zijn objectief en/of identificerend van aard en kennen geen alternatieve interpretaties, zoals kennis- of locatiegegevens.
+      </li>
+      <aside class="toelichting">
+        <div class="toelichting-title">Toelichting</div> 
+        De functie van een gebouw is een kennisgegeven, omdat deze in de loop van de tijd kan veranderen. De aard van een rijksmonument — of het archeologisch of gebouwd is — is formeel vastgelegd door de RCE en is daarom een CHO-gegeven.
+      </aside>
+      <li>
+        <strong>Relationele gegevens</strong><br>
+        Gegevens die relaties leggen tussen cultuurhistorische objecten onderling. Ze geven de samenhang tussen deze objecten aan.
+      </li>
+    </ul>
+
+    <p>Het cultuurhistorische object bestaat uit de volgende typen:</p>
+
+   </p> <style> table.bordered { border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px; } table.bordered caption { caption-side: top; font-weight: bold; margin-bottom: 8px; text-align: left; } table.bordered th, table.bordered td { border: 1px solid #444; padding: 8px 12px; text-align: left; } table.bordered thead th { background-color: #f0f0f0; } table.bordered tbody tr:nth-child(even) { background-color: #fafafa; } </style> <table class="bordered"> <thead> <tr> <th>type</th> <th>omschrijving</th> </tr> </thead> <tbody> <tr><td>Archeobotanische vondst</td><td>Resten van planten of zaden die zijn aangetroffen bij archeologisch onderzoek en die informatie geven over het vroegere gebruik van planten, landbouw of vegetatie.</td></tr> <tr><td>Archeozoölogische vondst</td><td>Dierenbotten of andere resten van dieren die zijn aangetroffen bij archeologisch onderzoek, en die informatie geven over bijvoorbeeld voedselconsumptie of huisdieren.</td></tr> <tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr> <tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur.</td></tr> <tr><td>Archeologisch monster</td><td>Een representatief deel van een archeologische context, verzameld voor nadere laboratoriumanalyse.</td></tr> <tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr> <tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen.</td></tr> <tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr> <tr><td>Archeologische vondst</td><td></td></tr> <tr><td>Artefact vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr> <tr><td>Cultuurhistorisch object</td><td>Een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is. (bijv. archeologische vondst, schilderij, monument).</td></tr> <tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuurhistorische objecten als Archeologische terreinen zijn.</td></tr> <tr><td>Rijksmonumenten complex</td><td>Groep van rijksmonumenten die gezamenlijk één geheel vormen.</td></tr> <tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden).</td></tr> <tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen.</td></tr> 
+  </tbody> </table> <br> <br> <p>Een overzicht van de gebruikte attributen per type is te vinden in het hoofdstuk <i>Objecten en attributen in het model</i>. </p>
+  </section>
+
+  <section>
+    <h4>Registratie</h4>
+    <p>Dit onderdeel beschrijft hoe objecten en hun kenmerken worden vastgelegd binnen het model.</p>
+    <p>
+     De registratie bevat gegevens over de inhoudelijke kennis, geografische ligging en fysieke standplaats van een cultuurhistorisch object. In het model wordt deze registratie onderverdeeld in:
+    </p>
+
+    <section>
+      <h5>Kennisregistratie</h5>
+      <p> De kennisregistratie omvat gegevens die de inhoudelijke kennis over een cultuurhistorisch object beschrijven.</p>
+      <p>Deze informatie is vaak gebaseerd op wetenschappelijk onderzoek of vloeit voort uit de wettelijke taken van de RCE. </p> 
+
+    <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Een voorbeeld is de functie van een monument, zoals <i>kerk</i>, of de stijl, zoals <i>waterstaatskerk</i>.</p>
   </aside>
-  <li>
-    <strong>Relationele gegevens</strong><br>
-    Gegevens die relaties leggen tussen cultuurhistorische objecten onderling. Ze geven de samenhang tussen deze objecten aan.
-  </li>
-</ul>
+      <aside class="toelichting"> <div class="toelichting-title">Model</div> <figure class="model breed-800"> <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_kennisregistratie.drawio.svg" alt="Beschrijving van het model"/> 
+      </figure> </aside>
+    </section>
 
+    <section>
+      <h5>Locatieregistratie</h5>
+      <p>In de locatieregistratie wordt de ruimtelijke dimensie van een cultuurhistorisch object vastgelegd.</p> <p>Het schept de mogelijkheid om objecten op een kaart te tonen.</p>
+      <br> 
+      <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Een voorbeeld is het adres van een monument, zoals <i>Dorpstraat 12</i>, of gemeentenaam, zoals <i>Blaricum</i>.</p></aside>
+    <aside class="toelichting"> <div class="toelichting-title">Model</div> <figure class="model breed-800"> <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_locatieregistratie.drawio.svg" alt="Beschrijving van het model"/> </figure>
+    </aside>
+    </section>
 
-    De cultuurhistorische objecten zijn onderverdeeld in de volgende entiteiten of typen:
-  </p>
-  
-  <style>
-  table.bordered {
-    border-collapse: collapse;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-  }
+    <section>
+      <h5>Standplaatsregistratie</h5>
+      <p>In de standplaatsregistratie wordt de specifieke plek van een object vastgelegd.</p>
+      <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Een voorbeeld is de plaatsingscode van een kunstvoorwerp in een kast of op een plank.</p></aside>
+    </section>
+  </section>
 
-  table.bordered caption {
-    caption-side: top;
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: left;
-  }
-
-  table.bordered th,
-  table.bordered td {
-    border: 1px solid #444;
-    padding: 8px 12px;
-    text-align: left;
-  }
-
-  table.bordered thead th {
-    background-color: #f0f0f0;
-  }
-
-  table.bordered tbody tr:nth-child(even) {
-    background-color: #fafafa;
-  }
-</style>
-
-<table class="bordered">
-  <thead>
-    <tr>
-      <th>type</th>
-      <th>omschrijving</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr><td>Archeobotanische vondst</td><td>Resten van planten of zaden die zijn aangetroffen bij archeologisch onderzoek en die informatie geven over het vroegere gebruik van planten, landbouw of vegetatie.</td></tr>
-<tr><td>Archeozoölogische vondst</td><td>Dierenbotten of andere resten van dieren die zijn aangetroffen bij archeologisch onderzoek, en die informatie geven over bijvoorbeeld voedselconsumptie of huisdieren.</td></tr>
-<tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr>
-<tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur.</td></tr>
-<tr><td>Archeologisch monster</td><td>Een representatief deel van een archeologische context, verzameld voor nadere laboratoriumanalyse.</td></tr>
-<tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr>
-<tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen.</td></tr>
-<tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr>
-<tr><td>Archeologische vondst</td><td></td></tr>
-<tr><td>Artefact vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr>
-<tr><td>Cultuurhistorisch object</td><td>Een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is. (bijv. archeologische vondst, schilderij, monument).</td></tr>
-<tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuurhistorische objecten als Archeologische terreinen zijn.</td></tr>
-<tr><td>Rijksmonumenten complex</td><td>Groep van rijksmonumenten die gezamenlijk één geheel vormen.</td></tr>
-<tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden).</td></tr>
-<tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen.</td></tr>
-
-  </tbody>
-</table>
-<br>
-<br>
-  <p>Een overzicht van de gebruikte attributen binnen de typen is te vinden in de verdere beschrijving van de entiteiten en attributen.
-</p>
-</section>
-      <section>
-  <h4>Registratie</h4>
-  <p>
- De registratie omvat gegevens die de inhoudelijke kennis, geografische ligging en fysieke standplaats van een <strong>cultuurhistorisch object</strong> beschrijft. In het model verdeeld in:
-</p>
-</section>
-
-      <br>
+  <br>
   <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model breed-900">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
-      alt="Beschrijving van het model"/>
-  </figure>
-</aside>
-
- 
-      <article>
-        <h5><i>kennisregistratie</i></h5>
-        <p>
-        De kennisregistratie omvat gegevens die de inhoudelijke kennis over een cultuurhistorisch object beschrijven, zoals functie, stijl, type, naam en omschrijving. Deze informatie is vaak gebaseerd op wetenschappelijk onderzoek of vloeit voort uit de wettelijke taken van de RCE.
-        </p>
-        <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model breed-800">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_kennisregistratie.drawio.svg" 
-      alt="Beschrijving van het model"/>
-  </figure>
-</aside>
-
- 
-
-          </article>
-          <article>
-        <h5><i>locatieregistratie</i></h5>
-        <p>In de locatieregistratie wordt de ruimtelijke dimensie van een cultuurhistorisch object vastgelegd, zoals adres, coordinaten, gemeente. Het schept de mogelijkheid om objecten op een kaart te tonen.</p>
-        <br>
-        <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model breed-800">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_locatieregistratie.drawio.svg" 
-      alt="Beschrijving van het model"/>
-    
-</figure>
-
-      </article>
-      <article>
-        <h5><i>standplaatsregistratie</i></h5>
-        <p>In de standplaatsregistratie wordt de specifieke plek van een object vastgelegd, zoals een gebouw, kast of plank.</p>
-        <br>
-        </article>
-        </section>
-      <section>
-  <h2>Begrippen</h2>
-  <p>
-    Begrippen zijn een belangrijk onderdeel van het RCE datamodel. Ze zorgen ervoor dat informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier wordt vastgelegd. Door begrippen te gebruiken, wordt het makkelijker om informatie te vinden en uit te wisselen.
-  </p>
-  <aside class="toelichting">
-  <div class="toelichting-title">Toelichting</div> 
-  <p>De waarden die gebruikt moeten worden, zoals bij functie of rol, zijn afkomstig uit een termenlijst. </p>
-</aside>
-<article>
-  <h3><i>typen begrippensystemen</i></h3>
-  <p>Het model ondersteunt en past verschillende typen begrippensystemen toe, afhankelijk van het gebruiksdoel en de informatie-laag waarin ze worden ingezet:</p>
-  <ul>
-    <li>Een woordenlijst biedt eenvoudige, gecontroleerde termen om invoer consistent te houden en het zoeken te standaardiseren.</li>
-    <li>Een thesaurus legt relaties tussen termen vast, zoals synoniemen, hiërarchieën en associaties. Dit maakt het mogelijk om met verwante termen te zoeken.</li>
-    <li>Een taxonomie structureert begrippen in hiërarchieën en bevorderen zo systematische ordening en analysemogelijkheden.</li>
-  </ul>
-</article>
-<article>
-  <h3><i>voordelen gebruik van begrippen</i></h3>
-  <ul>
-  <li>Verbeterde gegevenskwaliteit door het gebruik van consistente terminologie, waardoor ambiguïteit en invoerfouten worden voorkomen.</li>
-  <li>Verbeterde vindbaarheid doordat gebruikers via bredere of alternatieve termen relevante informatie kunnen terugvinden.</li>
-  <li>Verbeterde herbruikbaarheid doordat begrippen via URI’s inzetbaar zijn in andere datasets, wat de kwaliteit van linked data bevordert.</li>
-</ul>
-  </article>
-</section>
+    <div class="toelichting-title">Model</div>
+    <figure class="model breed-900">
+      <img 
+        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
+        alt="Beschrijving van het model"/>
+    </figure>
+  </aside>
 </section>
 
     <section id="model-structuur">
-      <h2>Structuur van het model</h2>
+  <h2>Opbouw van het model</h2>
+  <p>In dit hoofdstuk wordt de structuur van het model uiteengezet en hoe de onderdelen zich tot elkaar verhouden.</p>
+  <p>
+    Het datamodel vormt een gestructureerde weergave van de objecten in een specifiek kennisdomein, inclusief hun kenmerken en de relaties onderling.
+  </p>
+  <p>
+    Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, monumenten, (historisch) landschap en roerend. 
+  </p>
+  <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.</p>
+  </aside>
+
+  <section id="niveaus-model">
+    <h3>Lagen</h3>
+    <p>Dit onderdeel beschrijft de gelaagde architectuur van het model.</p>
+    <p>Het model bestaat uit meerdere lagen die samen de structuur vormen. Deze structuur ondersteunt zowel verticale relaties — hiërarchieën van algemene naar specifieke concepten — als horizontale relaties, oftewel associaties tussen verwante concepten op hetzelfde niveau.</p>
+    <img
+      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_lagen.drawio.svg"
+      alt="Visualisatie van de lagen binnen het conceptueel model"
+      width="1600"
+    />
+
+    <!-- Object-laag -->
+    <section id="object-laag">
+      <h4>Object-laag</h4>
       <p>
-        Het datamodel vormt een gestructureerde weergave van de objecten in een specifiek kennisdomein, inclusief hun kenmerken en de relaties onderling.
-        <p>Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, monumenten,
-        (historisch) landschap en roerend. 
+    Het fundament van het model wordt gevormd door het object, dat fungeert als oriëntatiepunt binnen de datastructuur.
+</p>
+<p>
+    Dit sluit aan bij de missie van de RCE: het behouden, versterken en toegankelijk maken van het culturele erfgoed. Vanuit deze missie verzamelt de RCE informatie over cultuurhistorische objecten — zoals monumenten, museale voorwerpen, archeologische resten en cultuurlandschappen — en ondersteunt zij het erfgoed onder meer via subsidies en advies.
+</p>
+<p>
+    Hoewel deze laag geen deel uitmaakt van het formele model, omdat er op dit niveau geen eigenschappen zijn gedefinieerd, vormt het object zelf wel het centrale uitgangspunt voor de objectgeoriënteerde databenadering. Het biedt een kader waarbinnen eigenschappen en relaties in latere lagen worden gespecificeerd en dient als referentiepunt voor het structureren en begrijpen van de data.
+</p>
+
+    </section>
+
+    <!-- Classificatie-laag -->
+    <section id="classificatie-laag">
+      <h4>Classificatie-laag</h4>
+      <p>
+        Op dit niveau worden objecten ingedeeld in hoofd- en subclassificaties. Deze objecttypen zijn semantisch met elkaar verbonden, waardoor objecten in verschillende contexten kunnen worden geïnterpreteerd en toegepast.
       </p>
-      <aside class="toelichting">
-  <div class="toelichting-title">Toelichting</div> 
-  <p>Voorbeelden van dergelijke objecten zijn archeologische vondsten, rijksmonumenten, verdedigingslinies en beeldende kunst.</p>
-</aside>
+      <p>
+        Elke type biedt een alternatieve insteek om toegang tot data te verkrijgen. Naast hiërarchische structuren kunnen ook associatieve verbanden worden gelegd, bijvoorbeeld tussen verwante types. De classificatie-laag is bovendien uitbreidbaar en schaalbaar, zodat het model kan meegroeien met veranderende inzichten.
+      </p>
+      <p>
+        In deze laag staat het cultuurhistorisch object centraal. Andere objecten, zoals tekstobjecten of audiovisuele objecten, kunnen het cultuurhistorisch object beschrijven of verbeelden, maar zijn daar niet hiërarchisch van afhankelijk. Elk type object is zelfstandig en op zichzelf benaderbaar.
+      </p>
+    </section>
 
-      <section id="niveaus-model">
-        <h3>Lagen</h3>
-        <p>
-          Het model is opgebouwd uit lagen die samen de
-          structuur van het model vormen. <p>Deze structuur ondersteunt zowel
-          verticale relaties (hiërarchieën van algemene naar specifieke
-          concepten) als horizontale relaties (associaties tussen verwante
-          concepten op hetzelfde niveau). Door deze opzet is het mogelijk om
-          informatie op verschillende niveaus te onderscheiden en benaderen.
-        </p>
-        <img
-              src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_lagen.drawio.svg"
-              alt="Visualisatie van de lagen binnen het conceptueel model"
-              width="1600"
-            />
-        
-        <article>
-          <h5><i>object-laag</i></h5>
-          <p>
-            Het fundament van het model wordt gevormd door het
-            <strong>object</strong>, dat fungeert als oriëntatiepunt binnen de
-            datastructuur.
-            <p> Deze laag is geen onderdeel van het formele model, omdat er op
-            dit niveau geen eigenschappen zijn gedefinieerd. Het object vormt
-            echter wel een essentieel vertrekpunt voor de databenadering.
-          </p>
-        </article>
+    <!-- Aspect-laag -->
+    <section id="aspect-laag">
+      <h4>Aspect-laag</h4>
+      <p>
+        Deze laag beschrijft de eigenschappen of aspecten van een object, zoals fysieke, ruimtelijke en technische eigenschappen. Elk aspect voegt detail en betekenis toe aan de beschrijving van het object.
+      </p>
+    </section>
 
-        <article>
-          <h4><i>classificatie-laag</i></h4>
-          <p>
-            Op dit niveau worden objecten ingedeeld in hoofd- en subclassificaties. Deze objecttypen zijn semantisch met elkaar verbonden, waardoor objecten in verschillende contexten kunnen worden geïnterpreteerd en toegepast.
-          </p>
-          <p>
-            Elke type biedt een alternatieve insteek om toegang tot data te
-            verkrijgen. Naast hiërarchische structuren kunnen ook associatieve
-            verbanden worden gelegd, bijvoorbeeld tussen verwante types of
-            thematieken. De classificatie-laag is bovendien uitbreidbaar en
-            schaalbaar, zodat het model kan meegroeien met veranderende
-            inzichten.
-          </p>
-          <p>
-            In deze laag staat het cultuurhistorisch object centraal. Andere objecten, zoals tekst-objecten of audiovisuele objecten, kunnen het cultuurhistorisch object beschrijven of verbeelden, maar zijn daar niet hiërarchisch van afhankelijk. Elk type object is zelfstandig en op zichzelf benaderbaar.
-          </p>
-        </article>
+    <!-- Begrippen-laag -->
+    <section id="begrippen-laag">
+      <h4>Begrippen-laag</h4>
+      <p>
+        Hier worden de genormaliseerde termen en begrippen vastgelegd die per object of aspect gebruikt mogen worden.
+      </p>
+      <p>
+        Deze termen komen uit gecontroleerde vocabulaires of thesauri en zorgen voor consistentie en hergebruik van terminologie. Dit vermindert ambiguïteit en bevordert interoperabiliteit.
+      </p>
+    </section>
 
-        <article>
-          <h4><i>aspect-laag</i></h4>
-          <p>
-            Deze laag beschrijft de eigenschappen of aspecten van een object, zoals fysieke, ruimtelijke en technische eigenschappen. Elk aspect voegt detail en betekenis toe aan de beschrijving van het object.
-          </p>
-        </article>
+    <!-- Provenance-laag -->
+    <section id="provenance-laag">
+      <h4>Provenance-laag</h4>
+      <p>
+        Deze laag doorkruist alle andere lagen van het datamodel.
+      </p>
+      <p>
+        Op het niveau van elk attribuut wordt vastgelegd waar de informatie vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke periode de gegevens geldig zijn.
+      </p>
+    </section>
 
-        <article>
-          <h4><i>begrippen-laag</i></h4>
-          <p>
-            Hier worden de genormaliseerde termen en begrippen vastgelegd die
-            per object of aspect gebruikt mogen worden. <p>Deze termen komen uit
-            gecontroleerde vocabulaires of thesauri en zorgen voor consistentie
-            en hergebruik van terminologie. Dit vermindert ambiguïteit en
-            bevordert interoperabiliteit.
-          </p>
-        </article>
+  </section>
+</section>
 
-        <article>
-          <h4><i>provenance-laag</i></h4>
-          <p>
-            Deze laag doorkruist alle andere lagen van het datamodel.
-            <p>Op het niveau van elk attribuut wordt vastgelegd waar de informatie
-            vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke
-            periode de gegevens geldig zijn.
-          </p>
-        </article>
-        </section>
-        
-   <section id="samenhang"></section>
-  <h3>Samenhang</h3>
-<p>In deze sectie wordt de samenhang tussen objecten beschreven.</p>
+
+  <section id="relaties-model">
+  <h2>Relaties en tijd in het model</h2>      
+
+  <h3>Relaties</h3>
+  <p>Licht toe hoe eigenschappen en subonderdelen van een object onderling zijn verbonden.</p>
+
   <article>
-    <h4><i>relatie tussen cultuurhistorische objecten en andere objecten</i></h4>
-    <p>
-      Een cultuurhistorisch object kan zijn afgebeeld op een of meerdere beeld- en audiovisuele objecten,
-      zoals een foto, tekening of website.
-    </p>
-    <p>
-      Een tekst-object kan een afbeelding bevatten van één of meerdere cultuurhistorische objecten.
-      Beeld- en audiovisuele objecten kunnen bovendien voorkomen binnen tekst-objecten, zoals boeken of tijdschriften.
-    </p>
-   
+    <h4><i>Relatie tussen cultuurhistorische objecten en andere objecten</i></h4>
+    <p>Een cultuurhistorisch object kan zijn afgebeeld op één of meerdere beeld- en audiovisuele objecten, zoals een foto, tekening of website.</p>
+    <p>Een tekst-object kan een afbeelding bevatten van één of meerdere cultuurhistorische objecten. Beeld- en audiovisuele objecten kunnen bovendien voorkomen binnen tekst-objecten, zoals boeken of tijdschriften.</p>
     <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model breed-500">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" 
-      alt="Beschrijving van het model"/>
-</figure>
-
-
-
+      <div class="toelichting-title">Model</div>
+      <figure class="model breed-500">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" alt="Beschrijving van het model"/>
+      </figure>
+    </aside>
   </article>
-<article>
-  <h4><i>Relaties tussen cultuurhistorische objecten</i></h4>
 
-  <p>
-    Cultuurhistorische objecten kunnen onderling op verschillende manieren met elkaar verbonden zijn. 
-    Er zijn twee belangrijke soorten samenhang die we onderscheiden:
-  </p>
-
-  <aside class="toelichting">
-    <div class="toelichting-title">Voorbeeld</div>
-    Een rijksmonument kan onderdeel zijn van een groter complex.
-  </aside>
-
-  <p>
-    Deze eerste relatie betreft de hiërarchische structuur tussen objecten, bijvoorbeeld een rijksmonument als onderdeel van een complex.
-  </p>
-
-  <p>
-  Binnen de archeologie wordt de samenhang tussen objecten op een meer gedetailleerde en ruimtelijke manier vastgelegd. 
-    Hierbij gaat het om de volgende structuur:
-  </p>
-
-  <p>
-    Het hoogste niveau is het <strong>archeologisch onderzoeksgebied</strong>: een duidelijk afgebakend gebied waarbinnen archeologisch onderzoek plaatsvindt.
-  </p>
-
-  <p>
-    Binnen zo’n onderzoeksgebied kunnen één of meerdere <strong>vindplaatsen</strong> worden geregistreerd.
-  </p>
-
-  <aside class="toelichting">
-    <div class="toelichting-title">Voorbeeld</div>
-    Een vindplaats is een locatie waar archeologische resten zijn aangetroffen, zoals vondsten of sporen die duiden op menselijke activiteit.
-  </aside>
-
-  <p>
-    Vindplaatsen zijn gekoppeld aan hun onderzoeksgebied en vormen zo een ruimtelijke onderverdeling binnen het onderzoeksgebied.
-  </p>
-
-  <p>
-    Elke vindplaats kan weer verbonden zijn aan één of meer <strong>archeologische complexen</strong>.
-  </p>
-
-  <aside class="toelichting">
-    <div class="toelichting-title">Voorbeelden</div>
-    Complexen kunnen bestaan uit een verzameling vondsten en grondsporen die ruimtelijk en/of chronologisch samenhangen, zoals een nederzetting of een grafveld.
-  </aside>
-
-  <p>
-    Daarnaast onderscheidt het model het <strong>archeologisch terrein</strong>, een begrensd gebied waarin archeologische resten aanwezig zijn of zijn geweest.
-  </p>
-
-  <p>
-    Binnen een terrein kunnen meerdere complexen liggen. Meerdere terreinen samen kunnen worden aangewezen als een <em>archeologisch rijksmonument</em>, een juridische aanduiding met beschermde status.
-  </p>
-
-  <p>
-    De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. 
-    Dit zijn het tastbare bewijs van menselijke activiteit en zijn gekoppeld aan een complex of terrein.
-  </p>
-
-  <p>
-    De relaties die in het model worden gelegd tussen deze objecten zijn onder andere: <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>.
-  </p>
-
-  <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model breed-500">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg" 
-      alt="Beschrijving van het model"/>
-</figure>
-
-</article>
-
-
-<section id="tijdaspect"></section>
-  <h3>Tijdsaspect</h3>
-          <p>
-            Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden en kan uiteenlopen van een specifieke datum tot een ruimer tijdvak, bestaande uit een begin- en einddatum, of een periode met een begin- en einddatum.
-          </p>
-
+  <article>
+    <h4><i>Relaties tussen cultuurhistorische objecten</i></h4>
+   <p> Cultuurhistorische objecten kunnen onderling op verschillende manieren met elkaar verbonden zijn. Er zijn twee belangrijke soorten samenhang die we onderscheiden: </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeeld</div> Een rijksmonument kan onderdeel zijn van een groter complex. </aside> <p> Deze eerste relatie betreft de hiërarchische structuur tussen objecten, bijvoorbeeld een rijksmonument als onderdeel van een complex. </p> 
+   <p> Binnen de archeologie wordt de samenhang tussen objecten op een meer gedetailleerde en ruimtelijke manier vastgelegd. Hierbij gaat het om de volgende structuur: </p> 
    <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect1.drawio.svg" 
-      alt="Beschrijving van het model"/>
-</figure>
+      <div class="toelichting-title">Model</div>
+      <figure class="model breed-600">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/Samenhang_archeologie.png" alt="Beschrijving van het model"/>
+      </figure>
     </aside>
-    <br>
-    <aside class="toelichting">
-  <div class="toelichting-title">Model</div>
-  <figure class="model">
-    <img 
-      src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect2.drawio.svg" 
-      alt="Beschrijving van het model"/>
-</figure>
-    </aside>
-        
-       <section id="feit-gebeurtenis">
+   
+   <p> Het hoogste niveau is het <strong>archeologisch onderzoeksgebied</strong>: een duidelijk afgebakend gebied waarbinnen archeologisch onderzoek plaatsvindt. </p> <p> Binnen zo’n onderzoeksgebied kunnen één of meerdere <strong>vindplaatsen</strong> worden geregistreerd. </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeeld</div> Een vindplaats is een locatie waar archeologische resten zijn aangetroffen, zoals vondsten of sporen die duiden op menselijke activiteit. </aside> <p> Vindplaatsen zijn gekoppeld aan hun onderzoeksgebied en vormen zo een ruimtelijke onderverdeling binnen het onderzoeksgebied. </p> <p> Elke vindplaats kan weer verbonden zijn aan één of meer <strong>archeologische complexen</strong>. </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeelden</div> Complexen kunnen bestaan uit een verzameling vondsten en grondsporen die ruimtelijk en/of chronologisch samenhangen, zoals een nederzetting of een grafveld. </aside> <p> Daarnaast onderscheidt het model het <strong>archeologisch terrein</strong>, een begrensd gebied waarin archeologische resten aanwezig zijn of zijn geweest. </p> <p> Binnen een terrein kunnen meerdere complexen liggen. Meerdere terreinen samen kunnen worden aangewezen als een <em>archeologisch rijksmonument</em>, een juridische aanduiding met beschermde status. </p> <p> De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. Dit zijn het tastbare bewijs van menselijke activiteit en zijn gekoppeld aan een complex of terrein. </p> <p> De relaties die in het model worden gelegd tussen deze objecten zijn onder andere: <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>. </p> <aside class="toelichting"> <div class="toelichting-title">Model</div> <figure class="model breed-500"> <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg" alt="Beschrijving van het model"/> </figure>
+  </article>
+
+  <h3>Tijdsaspect</h3>
+  <p>Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden en kan uiteenlopen van een specifieke datum tot een ruimer tijdvak, bestaande uit een begin- en einddatum, of een periode met een begin- en einddatum.</p>
+  <aside class="toelichting">
+    <div class="toelichting-title">Model</div>
+    <figure class="model">
+      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect1.drawio.svg" alt="Beschrijving van het model"/>
+    </figure>
+  </aside>
+  <aside class="toelichting">
+    <div class="toelichting-title">Model</div>
+    <figure class="model">
+      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect2.drawio.svg" alt="Beschrijving van het model"/>
+    </figure>
+  </aside>
+
   <h3>Feit en gebeurtenis</h3>
-  <p>In deze sectie wordt uitgelegd wat het verschil is tussen een feit en een gebeurtenis...</p>
+  <p>Licht toe het verschil tussen een feit en een gebeurtenis.</p>
 
   <article>
     <h4><i>Wat is een feit?</i></h4>
@@ -602,7 +428,6 @@
   <article>
     <h4><i>Wat is een gebeurtenis?</i></h4>
     <p>Een gebeurtenis beschrijft een proces of handeling waarbij het aspect aan een gebeurtenis wordt verbonden.</p>
-
     <aside class="toelichting">
       <div class="toelichting-title">Voorbeeld</div>
       <ul>
@@ -615,44 +440,70 @@
   <aside class="toelichting">
     <div class="toelichting-title">Model</div>
     <figure class="model breed-600">
-      <img 
-        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg" 
-        alt="Beschrijving van het model"
-      />
+      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg" alt="Beschrijving van het model"/>
     </figure>
   </aside>
-</section>
 
-<section id="provenance"></section>
   <h3>Provenance</h3>
   <p>Provenance maakt het mogelijk om uiteenlopende zienswijzen op data te registreren — zowel synchroon (naast elkaar bestaand) als diachroon (door de tijd heen). Dit wordt gerealiseerd door bij data vast te leggen wie deze heeft aangeleverd of bewerkt, op welk moment dat is gebeurd, en welke status eraan is toegekend.</p>
 
-<p>Voor eigenschappen die in de tijd kunnen veranderen — zoals functie, status of eigenaar — worden altijd geldigheidsperiodes vastgelegd. Wanneer er sprake is van een herkenbare of betekenisvolle wijziging, kan daarnaast een expliciete gebeurtenis worden gemodelleerd.</p>
+  <p>Voor eigenschappen die in de tijd kunnen veranderen — zoals functie, status of eigenaar — worden altijd geldigheidsperiodes vastgelegd. Wanneer er sprake is van een herkenbare of betekenisvolle wijziging, kan daarnaast een expliciete gebeurtenis worden gemodelleerd.</p>
 
-<p>De provenance wordt structureel opgenomen in de registratie, zodat herkomst, tijd en context transparant en navolgbaar zijn.</p>
- <aside class="toelichting">
-     <div class="toelichting-title">Toelichting</div> 
- <p>Een voorbeeld van het werken met geldigheidsdata is het vastleggen van een gewijzigde functie van een gebouw, bijvoorbeeld dat een kerk van 1912 tot 2001 als kerk fungeerde en daarna als wooncomplex. </p>
- <p>Daarnaast kan een gebeurtenis worden vastgelegd als die betekenisvol is, zoals een restauratie van het gebouw, inclusief gegevens over wanneer die plaatsvond en door wie. Zo worden tijdsgebonden eigenschappen en belangrijke gebeurtenissen overzichtelijk geregistreerd.</p>
-</aside>
+  <p>De provenance wordt structureel opgenomen in de registratie, zodat herkomst, tijd en context transparant en navolgbaar zijn.</p>
 
+  <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Een voorbeeld van het werken met geldigheidsdata is het vastleggen van een gewijzigde functie van een gebouw, bijvoorbeeld dat een kerk van 1912 tot 2001 als kerk fungeerde en daarna als wooncomplex.</p>
+  </aside>
 </section>
-      </section>
-    </section>
-     </section>
-     </section>
+
+
  
-   
-<section id="beschrijving-model">
-  <h2>Beschrijving van entiteiten en attributen</h2>
-<p>In deze sectie worden de verschillende entiteiten — zoals objecttypen en registratietypen — en hun bijbehorende attributen beschreven.</p>
+  <section id="gebruik-begrippen">
+  <h2>Gebruik van begrippen in het model</h2>
+  <p>In dit hoofdstuk wordt het belang en de toepassing van begrippen binnen het model toegelicht. 
+  Daarbij komen de verschillende soorten begrippen aan bod en het belang van hun toepassing. Begrippen vormen een essentieel onderdeel van het RCE-datamodel: ze maken het mogelijk om informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier vast te leggen. Dit vergemakkelijkt het vinden, delen en uitwisselen van informatie.
+  </p>
+  <aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>De waarden die gebruikt moeten worden — zoals bij het functie van een monument <i>kerk</i> of bij het rol van een actor <i>architect</i> — zijn afkomstig uit een termenlijst.</p>
+  </aside>
+
+  <section id="soorten-begrippen">
+    <h3>Soorten begrippen</h3>
+    <p>Beschrijft de verschillende typen begrippen die in het model worden gebruikt.</p>
+    <p>Het model ondersteunt en past verschillende typen begrippensystemen toe, afhankelijk van het gebruiksdoel en de informatie-laag waarin ze worden ingezet:</p>
+    <ul>
+      <li>Een woordenlijst biedt eenvoudige, gecontroleerde termen om invoer consistent te houden en het zoeken te standaardiseren.</li>
+      <li>Een thesaurus legt relaties tussen termen vast, zoals synoniemen, hiërarchieën en associaties. Dit maakt het mogelijk om met verwante termen te zoeken.</li>
+      <li>Een taxonomie structureert begrippen in hiërarchieën en bevordert zo systematische ordening en analysemogelijkheden.</li>
+    </ul>
+  </section>
+
+  <section id="waarom-begrippen">
+    <h3>Waarom begrippen gebruiken?</h3>
+    <p>Geeft de motivatie voor het gebruik van gestandaardiseerde begrippen.</p>
+   <h4>Waarom begrippen gebruiken?</h4>
+<ul>
+  <li>Consistente terminologie voorkomt dubbelzinnigheid en invoerfouten.</li>
+  <li>Verbetert de vindbaarheid door gebruik van bredere of alternatieve termen.</li>
+  <li>Maakt het mogelijk om verbanden te leggen tussen informatie uit verschillende databronnen.</li>
+</ul>
+
+  </section>
+</section>
+
+
+<section id="attributen-model">
+  <h2>Objecten en attributen in het model</h2>
+<p>Dit hoofdstuk geeft een overzicht van de objecttypen en hun specifieke eigenschappen.</p>
 
   <section id="cultuurhistorische objecten">
     <h3>Cultuurhistorische objecten</h3>
-    <p>In deze sectie worden het cultuurhistorische object en de onderliggende typen beschreven, evenals hun bijbehorende attributen.</p>
+    <p>Beschrijft objecten die relevant zijn voor het cultureel erfgoed.</p>
  <article>
   <h3><i>cultuurhistorisch_object</i></h3>
-  <p>In deze sectie wordt het cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verder in het document worden beschreven.</p>
+  <p>In deze tabel wordt het cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verder in het document worden beschreven.</p>
  
     <table class="def">
       <thead>
@@ -705,7 +556,7 @@
 
   <article>
     <h3><i>archeobotanische vondst</i></h3>
-    <p>In deze sectie worden de archeobotanische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeobotanische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -736,7 +587,7 @@
    </article>
   <article>
     <h3><i>archeozoölogische vondst</i></h3>
-    <p>In deze sectie worden de archeozoölogische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeozoölogische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -791,7 +642,7 @@
 
   <article>
     <h3><i>archeologisch complex</i></archeologisch></h3>
-    <p>In deze sectie worden de archeologische complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -834,7 +685,7 @@
 
   <article>
     <h3><i>archeologisch grondspoor</i></h3>
-    <p>In deze sectie worden de archeologische grondspoor, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische grondspoor, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -877,7 +728,7 @@
 
   <article>
     <h3><i>archeologisch monster</i></h3>
-    <p>In deze sectie worden de archeologische monster, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische monster, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
 
     <table class="def">
       <thead>
@@ -908,7 +759,7 @@
   
   <article>
   <h3><i>archeologisch onderzoeksgebied</i></h3>
-  <p>In deze sectie worden de archeologische onderzoeksgebied, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de archeologische onderzoeksgebied, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -932,7 +783,7 @@
 
 <article>
   <h3><i>archeologisch terrein</i></h3>
-  <p>In deze sectie worden de archeologische terrein, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de archeologische terrein, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -956,7 +807,7 @@
 
 <article>
   <h3><i>acheologische vindplaats</i></h3>
-  <p>In deze sectie worden de (archeologische) vindplaats, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de (archeologische) vindplaats, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -992,7 +843,7 @@
 
  <article>
   <h3><i>artefact vondst</i></h3>
-  <p>In deze sectie worden de artefact, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de artefact, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1040,7 +891,7 @@
 
 <article>
   <h3><i>rijksmonument</i></h3>
-  <p>In deze sectie worden het rijksmonument, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het rijksmonument, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1088,7 +939,7 @@
 
 <article>
   <h3><i>rijksmonument complex</i></h3>
-  <p>In deze sectie worden het rijksmonument complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het rijksmonument complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1112,7 +963,7 @@
 
 <article>
   <h3><i>stads- en dorpsgezicht</i></h3>
-  <p>In deze sectie worden het (stads- en dorps)gezicht, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het (stads- en dorps)gezicht, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1160,7 +1011,7 @@
 
 <article>
   <h3><i>werelderfgoed</i></h3>
-  <p>In deze sectie worden het werelderfgoed, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het werelderfgoed, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1198,19 +1049,18 @@
 </section>
 <section id="tekst-object">
     <h3>Tekstobject</h3>
-    <p>In deze sectie wordt het tekst-object en worden de bijbehorende attributen beschreven.</p>
+    <p>Licht objecten toe die primair bestaan uit tekstuele inhoud.</p>
 </section>
 <section id="beel-daudio-visueelobject">
     <h3>Beeld-audio-visueel object</h3>
-    <p>In deze sectie wordt het beeld-audio-visueel object en worden de bijbehorende attributen beschreven.</p>
+    <p>Beschrijft objecten met visuele en/of auditieve media-inhoud.</p>
 </section>
 <section id="kennisregistratie">
     <h3>Kennisregistratie</h3>
-    <p>In deze sectie worden de kennisregistratie en zijn typen beschreven, evenals de bijbehorende attributen.</p>
+    <p>Behandelt de attributen en structuur voor het vastleggen van kennis over objecten.</p>
 
     <article>
   <h3><i>kennis_registratie</i></h3>
-  <p>In deze sectie wordt de kennisregistratie en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verderop in het document worden toegelicht.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1270,7 +1120,7 @@
 
 <article>
   <h3><i>gebeurtenis</i></h3>
-  <p>In deze sectie worden de gebeurtenis en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de gebeurtenis en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1294,7 +1144,7 @@
 
 <article>
   <h3><i>datering</i></h3>
-  <p>In deze sectie worden datering en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden datering en de bijbehorende attributen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
@@ -1329,13 +1179,13 @@
 </section>
 <section id="locatieregistratie">
     <h3>Locatieregistratie</h3>
-    <p>In deze sectie wordt de locatieregistratie en worden de bijbehorende attributen beschreven.</p>
+    <p>Beschrijft de attributen voor het vastleggen van geografische en plaatsgegevens.</p>
 </section>
 </section>
 
  <section id="basiscomponenten-model">
     <h2>Implementatie van het model</h2>
-    <p>In deze sectie wordt de implementatie van het model beschreven.</p>
+    <p>Dit hoofdstuk geeft richtlijnen en voorbeelden voor het toepassen van het model in de praktijk.</p>
     <p>Een implementatie van het RCE datamodel is het linked datamodel: Cultureel Erfgoed Ontologie.(ceo)</p>
 </section>
 </body>
