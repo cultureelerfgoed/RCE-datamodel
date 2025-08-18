@@ -285,12 +285,12 @@ Momenteel wordt het model vooral toegepast voor kennisdata, maar het is zo ontwo
 
     <section id="model-structuur">
   <h2>Opbouw van het model</h2>
-  <p>In dit hoofdstuk wordt de structuur van het model uiteengezet en hoe de onderdelen zich tot elkaar verhouden.</p>
+  <p>Dit hoofdstuk beschrijft de gelaagde structuur van het datamodel. Elke laag heeft een specifieke functie en draagt bij aan de samenhang en bruikbaarheid van het geheel.</p>
   <p>
-    Het datamodel vormt een gestructureerde weergave van de objecten in een specifiek kennisdomein, inclusief hun kenmerken en de relaties onderling.
+    Het datamodel geeft een gestructureerd overzicht van de objecten binnen een specifiek kennisdomein, met hun kenmerken en onderlinge relaties.
   </p>
   <p>
-    Binnen de context van de Rijksdienst voor het Cultureel Erfgoed (RCE) betreft dit de domeinen archeologie, monumenten, (historisch) landschap en roerend. 
+   Voor de Rijksdienst voor het Cultureel Erfgoed (RCE) gaat het hierbij om de domeinen archeologie, monumenten, (historisch) landschap en roerend erfgoed.
   </p>
   <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div> 
@@ -369,100 +369,165 @@ Momenteel wordt het model vooral toegepast voor kennisdata, maar het is zo ontwo
   </section>
 </section>
 
+<section id="relaties-model">
+  <h2>Relaties, tijd en herkomst in het model</h2>
 
-  <section id="relaties-model">
-  <h2>Relaties en tijd in het model</h2>      
+  <!-- Subhoofdstuk: Samenhang -->
+  <section id="samenhang" class="subhoofdstuk">
+    <h3>Samenhang</h3>
+    <p>Licht toe hoe eigenschappen en subonderdelen van een object onderling zijn verbonden.</p>
 
-  <h3>Relaties</h3>
-  <p>Licht toe hoe eigenschappen en subonderdelen van een object onderling zijn verbonden.</p>
-
-  <article>
-    <h4><i>Relatie tussen cultuurhistorische objecten en andere objecten</i></h4>
     <p>Een cultuurhistorisch object kan zijn afgebeeld op één of meerdere beeld- en audiovisuele objecten, zoals een foto, tekening of website.</p>
     <p>Een tekst-object kan een afbeelding bevatten van één of meerdere cultuurhistorische objecten. Beeld- en audiovisuele objecten kunnen bovendien voorkomen binnen tekst-objecten, zoals boeken of tijdschriften.</p>
+
     <aside class="toelichting">
       <div class="toelichting-title">Model</div>
       <figure class="model breed-500">
-        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" alt="Beschrijving van het model"/>
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" alt="Model van samenhang tussen cultuurhistorische objecten en (beeld)dragers">
       </figure>
     </aside>
-  </article>
 
-  <article>
-    <h4><i>Relaties tussen cultuurhistorische objecten</i></h4>
-   <p> Cultuurhistorische objecten kunnen onderling op verschillende manieren met elkaar verbonden zijn. Er zijn twee belangrijke soorten samenhang die we onderscheiden: </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeeld</div> Een rijksmonument kan onderdeel zijn van een groter complex. </aside> <p> Deze eerste relatie betreft de hiërarchische structuur tussen objecten, bijvoorbeeld een rijksmonument als onderdeel van een complex. </p> 
-   <p> Binnen de archeologie wordt de samenhang tussen objecten op een meer gedetailleerde en ruimtelijke manier vastgelegd. Hierbij gaat het om de volgende structuur: </p> 
-   <aside class="toelichting">
+    <p>Cultuurhistorische objecten kunnen onderling op verschillende manieren met elkaar verbonden zijn. Er zijn twee belangrijke soorten samenhang die we onderscheiden:</p>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld</div>
+      <p>Een rijksmonument kan onderdeel zijn van een groter complex.</p>
+    </aside>
+
+    <p>Deze eerste relatie betreft de hiërarchische structuur tussen objecten, bijvoorbeeld een rijksmonument als onderdeel van een complex.</p>
+
+    <p>Binnen de archeologie wordt de samenhang tussen objecten op een meer gedetailleerde en ruimtelijke manier vastgelegd. Hierbij gaat het om de volgende structuur:</p>
+
+    <aside class="toelichting">
       <div class="toelichting-title">Model</div>
       <figure class="model breed-600">
-        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/Samenhang_archeologie.png" alt="Beschrijving van het model"/>
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/Samenhang_archeologie.png" alt="Model van samenhang binnen archeologie">
       </figure>
     </aside>
-   
-   <p> Het hoogste niveau is het <strong>archeologisch onderzoeksgebied</strong>: een duidelijk afgebakend gebied waarbinnen archeologisch onderzoek plaatsvindt. </p> <p> Binnen zo’n onderzoeksgebied kunnen één of meerdere <strong>vindplaatsen</strong> worden geregistreerd. </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeeld</div> Een vindplaats is een locatie waar archeologische resten zijn aangetroffen, zoals vondsten of sporen die duiden op menselijke activiteit. </aside> <p> Vindplaatsen zijn gekoppeld aan hun onderzoeksgebied en vormen zo een ruimtelijke onderverdeling binnen het onderzoeksgebied. </p> <p> Elke vindplaats kan weer verbonden zijn aan één of meer <strong>archeologische complexen</strong>. </p> <aside class="toelichting"> <div class="toelichting-title">Voorbeelden</div> Complexen kunnen bestaan uit een verzameling vondsten en grondsporen die ruimtelijk en/of chronologisch samenhangen, zoals een nederzetting of een grafveld. </aside> <p> Daarnaast onderscheidt het model het <strong>archeologisch terrein</strong>, een begrensd gebied waarin archeologische resten aanwezig zijn of zijn geweest. </p> <p> Binnen een terrein kunnen meerdere complexen liggen. Meerdere terreinen samen kunnen worden aangewezen als een <em>archeologisch rijksmonument</em>, een juridische aanduiding met beschermde status. </p> <p> De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. Dit zijn het tastbare bewijs van menselijke activiteit en zijn gekoppeld aan een complex of terrein. </p> <p> De relaties die in het model worden gelegd tussen deze objecten zijn onder andere: <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>. </p> <aside class="toelichting"> <div class="toelichting-title">Model</div> <figure class="model breed-500"> <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg" alt="Beschrijving van het model"/> </figure>
-  </article>
 
-  <h3>Tijdsaspect</h3>
-  <p>Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden en kan uiteenlopen van een specifieke datum tot een ruimer tijdvak, bestaande uit een begin- en einddatum, of een periode met een begin- en einddatum.</p>
-  <aside class="toelichting">
-    <div class="toelichting-title">Model</div>
-    <figure class="model">
-      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect1.drawio.svg" alt="Beschrijving van het model"/>
-    </figure>
-  </aside>
-  <aside class="toelichting">
-    <div class="toelichting-title">Model</div>
-    <figure class="model">
-      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect2.drawio.svg" alt="Beschrijving van het model"/>
-    </figure>
-  </aside>
+    <p>Het hoogste niveau is het <strong>archeologisch onderzoeksgebied</strong>: een duidelijk afgebakend gebied waarbinnen archeologisch onderzoek plaatsvindt.</p>
+    <p>Binnen zo’n onderzoeksgebied kunnen één of meerdere <strong>vindplaatsen</strong> worden geregistreerd.</p>
 
-  <h3>Feit en gebeurtenis</h3>
-  <p>Licht toe het verschil tussen een feit en een gebeurtenis.</p>
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld</div>
+      <p>Een vindplaats is een locatie waar archeologische resten zijn aangetroffen, zoals vondsten of sporen die duiden op menselijke activiteit.</p>
+    </aside>
 
-  <article>
-    <h4><i>Wat is een feit?</i></h4>
-    <p>Een feit betreft een directe toekenning van een eigenschap aan een object.</p>
-  </article>
+    <p>Vindplaatsen zijn gekoppeld aan hun onderzoeksgebied en vormen zo een ruimtelijke onderverdeling binnen het onderzoeksgebied.</p>
+    <p>Elke vindplaats kan weer verbonden zijn aan één of meer <strong>archeologische complexen</strong>.</p>
 
-  <article>
-    <h4><i>Wat is een gebeurtenis?</i></h4>
-    <p>Een gebeurtenis beschrijft een proces of handeling waarbij het aspect aan een gebeurtenis wordt verbonden.</p>
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld</div>
+      <p>Complexen kunnen bestaan uit een verzameling vondsten en grondsporen die ruimtelijk en/of chronologisch samenhangen, zoals een nederzetting of een grafveld.</p>
+    </aside>
+
+    <p>Daarnaast onderscheidt het model het <strong>archeologisch terrein</strong>, een begrensd gebied waarin archeologische resten aanwezig zijn of zijn geweest.</p>
+    <p>Binnen een terrein kunnen meerdere complexen liggen. Meerdere terreinen samen kunnen worden aangewezen als een <em>archeologisch rijksmonument</em>, een juridische aanduiding met beschermde status.</p>
+    <p>De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. Dit zijn het tastbare bewijs van menselijke activiteit en zijn gekoppeld aan een complex of terrein.</p>
+    <p>De relaties die in het model worden gelegd tussen deze objecten zijn onder andere: <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>.</p>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Model</div>
+      <figure class="model breed-500">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_typen.drawio.svg" alt="Model van samenhangstypen tussen objecten">
+      </figure>
+    </aside>
+  </section>
+
+  <!-- Subhoofdstuk: Tijdsaspect -->
+  <section id="tijdsaspect" class="subhoofdstuk">
+    <h3>Tijdsaspect</h3>
+    <p>Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden en kan uiteenlopen van een specifieke datum tot een ruimer tijdvak of tijdvakken, bestaande uit een begin- en einddatum <i>(type 1)</i>, of een periode met een begin- en einddatum. <i>(type 2)</i></p>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld type 1 (datum of tijdvak):</div>
+      <ul>
+      <li>De eerste steen van het raadhuis is gelegd op 12 mei 1650 <i>(datum)</i>.</li>
+      <li>Het schip van de kerk is gebouwd tussen 1820 <i>(begindatum)</i> en 1850 <i>(einddatum)</i>.</li>
+      </ul>
+      </aside>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld type 2 (periode):</div>
+      <ul>
+      <li>Een nederzetting komt uit de Romeinse tijd, <i>(periode)</i>, die begon in 12 voor christus <i>(begindatum) tot en met 449m na christus. <i>(einddatum)</i></li>
+      <li>De vervaardiging van een aardewerkschaal wordt gedateerd in de periode Middeleeuwen.</li>
+      </ul>
+      </aside>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Model</div>
+      <figure class="model">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect1.drawio.svg" alt="Model tijdsaspect: datum en tijdvak (1)">
+      </figure>
+    </aside>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Model</div>
+      <figure class="model">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_tijdsaspect2.drawio.svg" alt="Model tijdsaspect: datum en tijdvak (2)">
+      </figure>
+    </aside>
+  </section>
+
+  <!-- Subhoofdstuk: Feit en gebeurtenis -->
+  <section id="feit-gebeurtenis" class="subhoofdstuk">
+    <h3>Feit en gebeurtenis</h3>
+    <p>Licht toe het verschil tussen een feit en een gebeurtenis.</p>
+
+  
+    <p>Een feit betreft een directe toekenning van een eigenschap aan een object. Een gebeurtenis beschrijft een proces of handeling waarbij het aspect aan een gebeurtenis wordt verbonden.</p>
+
     <aside class="toelichting">
       <div class="toelichting-title">Voorbeeld</div>
       <ul>
-        <li>Feit: Het bouwjaar van een rijksmonument is 1820.</li>
-        <li>Gebeurtenis: De vervaardiging van het rijksmonument in 1820.</li>
+        <li><strong>Feit:</strong> Het bouwjaar van een rijksmonument is 1820 of ligt tussen 1820 en 1850.</li>
+        <li><strong>Gebeurtenis:</strong> Een gulden kan vervaardigt zijn vanaf periode Late Middeleeuwen B tot en met Nieuwe Tijd Laat (ofwel tussen 1250 en 1945). Daarbij is vervaardigt de gebeurtenis.</li>
       </ul>
     </aside>
-  </article>
+<p>Aan een gebeurtenis kunnen verder aanhangen de betrokkene of ruimtelijk aspect bij een gebeurtenis ofwel alle type-aspecten die betrekking hebben op de gebeurtenis.</p>
+<aside class="toelichting">
+  <div class="toelichting-title">Voorbeeld</div>
 
-  <aside class="toelichting">
-    <div class="toelichting-title">Model</div>
-    <figure class="model breed-600">
-      <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg" alt="Beschrijving van het model"/>
-    </figure>
-  </aside>
+  <p><strong>Gebeurtenis:</strong> De bouw van een molen vond plaats tussen 1800 en 1805.</p>
 
-  <h3>Provenance</h3>
-  <p>Provenance maakt het mogelijk om uiteenlopende zienswijzen op data te registreren — zowel synchroon (naast elkaar bestaand) als diachroon (door de tijd heen). Dit wordt gerealiseerd door bij data vast te leggen wie deze heeft aangeleverd of bewerkt, op welk moment dat is gebeurd, en welke status eraan is toegekend.</p>
+  <ul>
+    <li><strong>Betrokkenen:</strong> molenaar Jan de Vries</li>
+    <li><strong>Locatie:</strong> Dorpsstraat 12, Haarlem</li>
+    <li><strong>Type:</strong> korenmolen</li>
+  </ul>
+</aside>
 
-  <p>Voor eigenschappen die in de tijd kunnen veranderen — zoals functie, status of eigenaar — worden altijd geldigheidsperiodes vastgelegd. Wanneer er sprake is van een herkenbare of betekenisvolle wijziging, kan daarnaast een expliciete gebeurtenis worden gemodelleerd.</p>
+<aside class="toelichting">
+      <div class="toelichting-title">Model</div>
+      <figure class="model breed-600">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_gebeurtenis_vs_feit.drawio.svg" alt="Model: verschil tussen gebeurtenis en feit">
+      </figure>
+    </aside>
+  </section>
 
-  <p>De provenance wordt structureel opgenomen in de registratie, zodat herkomst, tijd en context transparant en navolgbaar zijn.</p>
+  <!-- Subhoofdstuk: Provenance -->
+  <section id="provenance" class="subhoofdstuk">
+    <h3>Provenance</h3>
+    <p>Provenance maakt het mogelijk om uiteenlopende zienswijzen op data te registreren — zowel synchroon (naast elkaar bestaand) als diachroon (door de tijd heen). Dit wordt gerealiseerd door bij data vast te leggen wie deze heeft aangeleverd of bewerkt, op welk moment dat is gebeurd, en welke status eraan is toegekend.</p>
 
-  <aside class="toelichting">
-    <div class="toelichting-title">Toelichting</div> 
-    <p>Een voorbeeld van het werken met geldigheidsdata is het vastleggen van een gewijzigde functie van een gebouw, bijvoorbeeld dat een kerk van 1912 tot 2001 als kerk fungeerde en daarna als wooncomplex.</p>
-  </aside>
+    <p>Voor eigenschappen die in de tijd kunnen veranderen — zoals functie, status of eigenaar — worden altijd geldigheidsperiodes vastgelegd. Wanneer er sprake is van een herkenbare of betekenisvolle wijziging, kan daarnaast een expliciete gebeurtenis worden gemodelleerd.</p>
+
+    <p>De provenance wordt structureel opgenomen in de registratie, zodat herkomst, tijd en context transparant en navolgbaar zijn.</p>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld</div>
+      <p>Een voorbeeld van het werken met geldigheidsdata is het vastleggen van een gewijzigde functie van een gebouw, bijvoorbeeld dat een kerk van 1912 tot 2001 als kerk fungeerde en daarna als wooncomplex.</p>
+    </aside>
+  </section>
 </section>
-
-
+ </section>
  
   <section id="gebruik-begrippen">
   <h2>Gebruik van begrippen in het model</h2>
   <p>In dit hoofdstuk wordt het belang en de toepassing van begrippen binnen het model toegelicht. 
-  Daarbij komen de verschillende soorten begrippen aan bod en het belang van hun toepassing. Begrippen vormen een essentieel onderdeel van het RCE-datamodel: ze maken het mogelijk om informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier vast te leggen. Dit vergemakkelijkt het vinden, delen en uitwisselen van informatie.
+  Daarbij komen de verschillende soorten begrippen aan bod en het belang van hun toepassing.</p>
+  <p>Begrippen vormen een essentieel onderdeel van het RCE-datamodel: ze maken het mogelijk om informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier vast te leggen. Dit vergemakkelijkt het vinden, delen en uitwisselen van informatie.
   </p>
   <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div> 
@@ -480,18 +545,21 @@ Momenteel wordt het model vooral toegepast voor kennisdata, maar het is zo ontwo
     </ul>
   </section>
 
-  <section id="waarom-begrippen">
+  <section id="soorten-begrippen">
     <h3>Waarom begrippen gebruiken?</h3>
-    <p>Geeft de motivatie voor het gebruik van gestandaardiseerde begrippen.</p>
-   <h4>Waarom begrippen gebruiken?</h4>
+    <p>Door gebruik te maken van begrippen uit een gecontroleerde lijst wordt informatie eenduidiger, beter doorzoekbaar en beter koppelbaar met andere bronnen.</p>
 <ul>
   <li>Consistente terminologie voorkomt dubbelzinnigheid en invoerfouten.</li>
   <li>Verbetert de vindbaarheid door gebruik van bredere of alternatieve termen.</li>
   <li>Maakt het mogelijk om verbanden te leggen tussen informatie uit verschillende databronnen.</li>
 </ul>
-
+<aside class="toelichting">
+    <div class="toelichting-title">Toelichting</div> 
+    <p>Stel dat in de ene database het woord kerk wordt gebruikt en in een andere parochiekerk. Wanneer beide termen als begrippen zijn opgenomen en aan elkaar gerelateerd zijn, kan een gebruiker toch alle relevante resultaten vinden, ongeacht welk woord in de zoekopdracht wordt gebruikt.</p>
+  </aside>
   </section>
-</section>
+  </section>
+
 
 
 <section id="attributen-model">
