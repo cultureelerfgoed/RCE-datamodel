@@ -13,7 +13,7 @@
       specStatus: "ED",
       shortName: "rce-datamodel",
       version: "1.0",
-      publishDate: "2025-08-14",
+      publishDate: "2025-08-19",
 
       editors: [
         {
@@ -154,8 +154,7 @@
   <h2>Doel van het model</h2>
   <p>
 Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (semantiek) daarvan systematisch vast te leggen.</p>
-<p>
-Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (semantiek) daarvan systematisch vast te leggen. Het model beschrijft de objecten waarover de RCE inhoudelijke data heeft verzameld. Momenteel wordt het vooral toegepast voor data die vanwege wettelijke verplichtingen of als kennis is vastgelegd, maar het is zo ontworpen dat het in de toekomst ook kan worden uitgebreid met data over processen.
+<p>Het model beschrijft de objecten waarover de RCE inhoudelijke gegevens heeft vastgelegd. Op dit moment wordt het voornamelijk toegepast op gegevens die zijn geregistreerd op grond van wettelijke verplichtingen of ter borging van kennis. Het model is echter zodanig ontworpen dat het in de toekomst tevens kan worden uitgebreid met gegevens over processen.</p> 
 
   <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div>
@@ -189,47 +188,44 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   <section id="uitgangspunt-model">
   <h2>Uitgangspunten van het model</h2>
   <p>Dit hoofdstuk beschrijft de fundamentele principes waarop het model is gebaseerd.</p>
-  <p>Het model legt data uit verschillende RCE-databronnen op een generieke en uniforme manier vast, waardoor een eenduidige datastructuur ontstaat. Dit voorkomt dubbele opslag en maakt het eenvoudiger om data te delen en te hergebruiken. 
-  Binnen het model worden twee hoofdtypen onderscheiden: <strong>object</strong> en <strong>registratie</strong>, elk met hun eigen attributen.</p>
-  <br>
+  Het model legt data uit verschillende RCE-databronnen op een generieke en uniforme manier vast, waardoor een eenduidige datastructuur ontstaat. Dit voorkomt dubbele opslag en maakt het eenvoudiger om data te delen en te hergebruiken. Binnen het model worden twee hoofdtypen onderscheiden: <strong>object</strong> en <strong>registratie</strong>, elk met hun eigen eigenschappen.
+
+   <aside class="toelichting">
+      <div class="toelichting-title">Toelichting</div> 
+      <p>Een eigenschap is in dit datamodel een kenmerk of stukje informatie dat specifiek bij een object of registratie hoort. Het beschrijft een bepaald aspect van het object of de registratie, zoals een naam, datum, locatie of functie. Eigenschappen maken het mogelijk om data gestructureerd vast te leggen en te begrijpen welke informatie bij welk type hoort.</p>
+    </aside>
 
   <section>
     <h4>Objecten</h4>
     <p>Hier wordt uitgelegd wat in dit model wordt verstaan onder een object en welke rol het speelt.</p>
     <p>
-      Het <strong>cultuurhistorisch object</strong> vormt het centrale knooppunt van het model. Alle andere objecten – zoals tekst-, beeld- en audiovisuele objecten – zijn eraan gerelateerd.
-    </p>
+    Een object bestaat uit drie typen: het cultuurhistorisch object, het tekstobject en het beeld- en audiovisueel object. Daarbij staat het cultuurhistorisch object centraal; de andere objecten zijn eraan gerelateerd en dragen aanvullende informatie aan over het cultuurhistorisch object.
     <aside class="toelichting">
       <div class="toelichting-title">Toelichting</div> 
       <ul>
-        <li>Een Cultuurhistorisch object kan zijn een voorwerp, een gebouw maar ook een gebied, zoals een schilderij, een rijksmonument of een archeologisch terrein.</li>
-        <li>Een tekstobject kan zijn een boek waarin een rijksmonument wordt beschreven.</li>
-        <li>Een beeldobject kan zijn een foto van een archeologisch artefact of van een opgraving.</li>
-        <li>Een audiovisueel object kan zijn een film waarin verslag wordt gedaan van een opgraving.</li>
-        <li>Een audio-object kan zijn een geluidsopname van een interview met een architect.</li>
+        <li>Cultuurhistorisch object: een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is, zoals een archeologische vondst, een schilderij, een rijksmonument of een archeologisch terrein.</li>
+        <li>Tekstobject: een tekstuele bron die inhoudelijke informatie over een cultuurhistorisch object bevat, bijvoorbeeld een boek of artikel waarin een monument wordt beschreven.</li>
+        <li>Beeld- en audiovisueel object: een visuele of auditieve bron die een cultuurhistorisch object afbeeldt of documenteert, zoals een foto van een artefact, een film van een opgraving of een geluidsopname van een interview met een architect.</li>
       </ul>
     </aside>
-    <p>Binnen het cultuurhistorische object (CHO) worden de volgende data vastgelegd:</p>
 
-    <ul>
-      <li>
-        <strong>Formele data</strong><br>
-        Data met een officiële status die formeel zijn vastgesteld door de RCE, vaak vastgesteld vanuit wettelijke kaders. Deze data zijn objectief en/of identificerend van aard en kennen geen alternatieve interpretaties, zoals kennis- of locatiedata.
-      </li>
+    <aside class="toelichting">
+      <div class="toelichting-title">Model</div>
+      <figure class="model breed-500">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_objecten2.drawio.svg" alt="Model van samenhangstypen tussen objecten">
+      </figure>
+    </aside>
+
+    <p>Het cultuurhistorische object kent de volgende typen, waarbij het onderscheid in het model is aangebracht om aan te geven welke eigenschappen per type gelden:</p>
+
+   </p> <style> table.bordered { border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px; } table.bordered caption { caption-side: top; font-weight: bold; margin-bottom: 8px; text-align: left; } table.bordered th, table.bordered td { border: 1px solid #444; padding: 8px 12px; text-align: left; } table.bordered thead th { background-color: #f0f0f0; } table.bordered tbody tr:nth-child(even) { background-color: #fafafa; } </style> <table class="bordered"> <thead> <tr> <th>type</th> <th>omschrijving</th> </tr> </thead> <tbody> <tr><td>Archeobotanische vondst</td><td>Resten van planten of zaden die zijn aangetroffen bij archeologisch onderzoek en die informatie geven over het vroegere gebruik van planten, landbouw of vegetatie.</td></tr> <tr><td>Archeozoölogische vondst</td><td>Dierenbotten of andere resten van dieren die zijn aangetroffen bij archeologisch onderzoek, en die informatie geven over bijvoorbeeld voedselconsumptie of huisdieren.</td></tr> <tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr> <tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur.</td></tr> <tr><td>Archeologisch monster</td><td>Een representatief deel van een archeologische context, verzameld voor nadere laboratoriumanalyse.</td></tr> <tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr> <tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen.</td></tr> <tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr> <tr><td>Archeologische vondst</td><td></td></tr> <tr><td>Artefact vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr><tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuurhistorische objecten als Archeologische terreinen zijn.</td></tr> <tr><td>Rijksmonumenten complex</td><td>Groep van rijksmonumenten die gezamenlijk één geheel vormen.</td></tr> <tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden).</td></tr> <tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen.</td></tr> 
+  </tbody> </table> <br> <br> <p>Een overzicht van de gebruikte eigenschappen per type is te vinden in het hoofdstuk <i>Objecten en eigenschappen in het model</i>. </p>
+    <p>Binnen het cultuurhistorische object (CHO) wordt data vastgelegd die een formele status heeft en officieel door de RCE is vastgesteld, veelal op basis van wettelijke kaders. Deze data is objectief en/of identificerend van aard en laat geen alternatieve interpretaties toe, in tegenstelling tot kennis- of locatiedata.</p>
       <aside class="toelichting">
         <div class="toelichting-title">Toelichting</div> 
-        De functie van een gebouw is kennis, omdat deze in de loop van de tijd kan veranderen. De aard van een rijksmonument — of het archeologisch of gebouwd is — is formeel vastgelegd door de RCE en is daarom een CHO-gegeven.
+       De functie van een gebouw wordt als kennis beschouwd, omdat deze in de loop der tijd kan veranderen en verschillende interpretaties naast elkaar kunnen bestaan. De aard van een rijksmonument — of het archeologisch of gebouwd is — is daarentegen formeel vastgesteld door de RCE en wordt daarom als CHO-data aangemerkt.
       </aside>
-      <li>
-        <strong>Relationele data</strong><br>
-        Data die relaties leggen tussen cultuurhistorische objecten onderling. Ze geven de samenhang tussen deze objecten aan.
-      </li>
-    </ul>
 
-    <p>Het cultuurhistorische object bestaat uit de volgende typen:</p>
-
-   </p> <style> table.bordered { border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px; } table.bordered caption { caption-side: top; font-weight: bold; margin-bottom: 8px; text-align: left; } table.bordered th, table.bordered td { border: 1px solid #444; padding: 8px 12px; text-align: left; } table.bordered thead th { background-color: #f0f0f0; } table.bordered tbody tr:nth-child(even) { background-color: #fafafa; } </style> <table class="bordered"> <thead> <tr> <th>type</th> <th>omschrijving</th> </tr> </thead> <tbody> <tr><td>Archeobotanische vondst</td><td>Resten van planten of zaden die zijn aangetroffen bij archeologisch onderzoek en die informatie geven over het vroegere gebruik van planten, landbouw of vegetatie.</td></tr> <tr><td>Archeozoölogische vondst</td><td>Dierenbotten of andere resten van dieren die zijn aangetroffen bij archeologisch onderzoek, en die informatie geven over bijvoorbeeld voedselconsumptie of huisdieren.</td></tr> <tr><td>Archeologisch complex</td><td>Verzameling van in tijd en ruimte geassocieerde vondsten en/of grondsporen.</td></tr> <tr><td>Archeologisch grondspoor</td><td>Een geïnterpreteerde verkleuring (grondspoor/verkleuring) of een element van vergankelijk (hout) of onvergankelijk materiaal (waaronder natuursteen, baksteen, beton, metaal) in de bodem ontstaan door menselijk handelen of natuurlijke processen. De verkleuring kan worden onderscheiden van zijn directe omgeving door een verschil in textuur en/of kleur en in sommige gevallen door de aanwezigheid van vondsten. De verkleuring kan het gevolg zijn van menselijke activiteiten die zijn bedoeld (bijv. het graven van een kuil) of onbedoeld (bijv. roodkleuring van de bodem door verhitting) of natuurlijke processen (bijv. een geul of boomval). Sporen maken soms deel uit van een structuur.</td></tr> <tr><td>Archeologisch monster</td><td>Een representatief deel van een archeologische context, verzameld voor nadere laboratoriumanalyse.</td></tr> <tr><td>Archeologisch onderzoeksgebied</td><td>Het geografische gebied waarop het onderzoek betrekking heeft.</td></tr> <tr><td>Archeologisch terrein</td><td>Afgebakend gebied met daarin een of meer behoudenswaardige archeologische vindplaatsen.</td></tr> <tr><td>Archeologische vindplaats</td><td>Een plaats waar archeologische resten in de vorm van vondsten en/of sporen in een aardkundige context zijn aangetroffen.</td></tr> <tr><td>Archeologische vondst</td><td></td></tr> <tr><td>Artefact vondst</td><td>Mobilia zoals artefacten, ecofacten en menselijke resten die bij een veldwerk (bijv. prospectie) worden aangetroffen.</td></tr> <tr><td>Cultuurhistorisch object</td><td>Een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is. (bijv. archeologische vondst, schilderij, monument).</td></tr> <tr><td>Rijksmonument</td><td>Onroerende cultuurhistorische objecten die als Rijksmonument zijn aangewezen. Dit kunnen zowel Onroerende cultuurhistorische objecten als Archeologische terreinen zijn.</td></tr> <tr><td>Rijksmonumenten complex</td><td>Groep van rijksmonumenten die gezamenlijk één geheel vormen.</td></tr> <tr><td>Stads- en dorpsgezicht</td><td>Een groep van onroerende zaken die van algemeen belang zijn wegens hun schoonheid, hun onderlinge ruimtelijke of structurele samenhang dan wel hun wetenschappelijke of cultuurhistorische waarde (en in welke zich één of meer monumenten bevinden).</td></tr> <tr><td>Werelderfgoed</td><td>Cultureel en natuurlijk erfgoed dat wordt beschouwd als onvervangbaar, uniek en eigendom van de hele wereld, en waarvan het van groot belang wordt geacht om te behouden. Alleen erfgoed dat is ingeschreven op de Werelderfgoedlijst van UNESCO mag deze titel dragen.</td></tr> 
-  </tbody> </table> <br> <br> <p>Een overzicht van de gebruikte attributen per type is te vinden in het hoofdstuk <i>Objecten en attributen in het model</i>. </p>
   </section>
 
   <section>
@@ -254,14 +250,16 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
     <section>
       <h5>Locatieregistratie</h5>
-      <p>In de locatieregistratie wordt de ruimtelijke dimensie van een cultuurhistorisch object vastgelegd.</p> <p>Het schept de mogelijkheid om objecten op een kaart te tonen.</p>
+      <p>In de locatieregistratie wordt de ruimtelijke dimensie van een cultuurhistorisch object vastgelegd.</p>
       <br> 
       <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div> 
     <p>Een voorbeeld is het adres van een monument, zoals <i>Dorpstraat 12</i>, of gemeentenaam, zoals <i>Blaricum</i>.</p></aside>
     <aside class="toelichting"> <div class="toelichting-title">Model</div> <figure class="model breed-800"> <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_locatieregistratie.drawio.svg" alt="Beschrijving van het model"/> </figure>
     </aside>
-    </section>
+    <p>Het schept ook de mogelijkheid om objecten op een kaart te tonen.</p>
+    
+  </section>
 
     <section>
       <h5>Standplaatsregistratie</h5>
@@ -363,7 +361,7 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
         Deze laag doorkruist alle andere lagen van het datamodel.
       </p>
       <p>
-        Op het niveau van elk attribuut wordt vastgelegd waar de informatie vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke periode de informatie geldig is.
+        Op het niveau van elk eigenschappen wordt vastgelegd waar de informatie vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke periode de informatie geldig is.
       </p>
     </section>
 
@@ -528,8 +526,8 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 
 
-<section id="attributen-model">
-  <h2>Objecten en attributen in het model</h2>
+<section id="eigenschappen-model">
+  <h2>Objecten en eigenschappen in het model</h2>
 <p>Dit hoofdstuk geeft een overzicht van de objecttypen en hun specifieke eigenschappen.</p>
 
   <section id="cultuurhistorische objecten">
@@ -537,12 +535,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <p>Beschrijft objecten die relevant zijn voor het cultureel erfgoed.</p>
  <article>
   <h3><i>cultuurhistorisch_object</i></h3>
-  <p>In deze tabel wordt het cultuurhistorisch object en de bijbehorende attributen beschreven. Deze attributen worden overgeërfd door de specifieke typen die verder in het document worden beschreven.</p>
+  <p>In deze tabel wordt het cultuurhistorisch object en de bijbehorende eigenschappen beschreven. Deze eigenschappen worden overgeërfd door de specifieke typen die verder in het document worden beschreven.</p>
  
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -590,12 +588,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
   <article>
     <h3><i>archeobotanische vondst</i></h3>
-    <p>In deze tabel worden de archeobotanische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeobotanische vondst, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
 
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -621,12 +619,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
    </article>
   <article>
     <h3><i>archeozoölogische vondst</i></h3>
-    <p>In deze tabel worden de archeozoölogische vondst, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeozoölogische vondst, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
 
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -676,12 +674,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
   <article>
     <h3><i>archeologisch complex</i></archeologisch></h3>
-    <p>In deze tabel worden de archeologische complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische complex, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
 
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -719,12 +717,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
   <article>
     <h3><i>archeologisch grondspoor</i></h3>
-    <p>In deze tabel worden de archeologische grondspoor, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische grondspoor, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
 
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -762,12 +760,12 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
   <article>
     <h3><i>archeologisch monster</i></h3>
-    <p>In deze tabel worden de archeologische monster, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+    <p>In deze tabel worden de archeologische monster, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
 
     <table class="def">
       <thead>
         <tr>
-          <th>Attribuut</th>
+          <th>Eigenschap</th>
           <th>Beschrijving</th>
           <th>Type</th>
           <th>Kardinaliteit</th>
@@ -793,11 +791,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   
   <article>
   <h3><i>archeologisch onderzoeksgebied</i></h3>
-  <p>In deze tabel worden de archeologische onderzoeksgebied, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de archeologische onderzoeksgebied, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -817,11 +815,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>archeologisch terrein</i></h3>
-  <p>In deze tabel worden de archeologische terrein, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de archeologische terrein, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -841,11 +839,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>acheologische vindplaats</i></h3>
-  <p>In deze tabel worden de (archeologische) vindplaats, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de (archeologische) vindplaats, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -877,11 +875,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
  <article>
   <h3><i>artefact vondst</i></h3>
-  <p>In deze tabel worden de artefact, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de artefact, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -925,11 +923,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>rijksmonument</i></h3>
-  <p>In deze tabel worden het rijksmonument, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het rijksmonument, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -973,11 +971,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>rijksmonument complex</i></h3>
-  <p>In deze tabel worden het rijksmonument complex, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het rijksmonument complex, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -997,11 +995,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>stads- en dorpsgezicht</i></h3>
-  <p>In deze tabel worden het (stads- en dorps)gezicht, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het (stads- en dorps)gezicht, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -1045,11 +1043,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>werelderfgoed</i></h3>
-  <p>In deze tabel worden het werelderfgoed, als een type cultuurhistorisch object, en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden het werelderfgoed, als een type cultuurhistorisch object, en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -1091,14 +1089,14 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 </section>
 <section id="kennisregistratie">
     <h3>Kennisregistratie</h3>
-    <p>Behandelt de attributen en structuur voor het vastleggen van kennis over objecten.</p>
+    <p>Behandelt de eigenschappen en structuur voor het vastleggen van kennis over objecten.</p>
 
     <article>
   <h3><i>kennis_registratie</i></h3>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -1154,11 +1152,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>gebeurtenis</i></h3>
-  <p>In deze tabel worden de gebeurtenis en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden de gebeurtenis en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -1178,11 +1176,11 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <article>
   <h3><i>datering</i></h3>
-  <p>In deze tabel worden datering en de bijbehorende attributen beschreven.</p>
+  <p>In deze tabel worden datering en de bijbehorende eigenschappen beschreven.</p>
   <table class="def">
     <thead>
       <tr>
-        <th>Attribuut</th>
+        <th>Eigenschap</th>
         <th>Beschrijving</th>
         <th>Type</th>
         <th>Kardinaliteit</th>
@@ -1213,7 +1211,7 @@ Het RCE-datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 </section>
 <section id="locatieregistratie">
     <h3>Locatieregistratie</h3>
-    <p>Beschrijft de attributen voor het vastleggen van geografische en plaatsgegevens.</p>
+    <p>Beschrijft de eigenschappen voor het vastleggen van geografische en plaatsgegevens.</p>
 </section>
 </section>
 
