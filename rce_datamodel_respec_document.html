@@ -205,7 +205,7 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
       <ul>
         <li>Cultuurhistorisch object: een object dat van cultureel, historisch, artistiek of wetenschappelijk belang is, zoals een archeologische vondst, een schilderij, een rijksmonument of een archeologisch terrein.</li>
         <li>Tekstobject: een tekstuele bron die inhoudelijke informatie over een cultuurhistorisch object bevat, bijvoorbeeld een boek of artikel waarin een monument wordt beschreven.</li>
-        <li>Beeld- en audiovisueel object: een visuele of auditieve bron die een cultuurhistorisch object afbeeldt of documenteert, zoals een foto van een artefact, een film van een opgraving of een geluidsopname van een interview met een architect.</li>
+        <li>Beeld- en audio-visueel object: een visuele of auditieve bron die een cultuurhistorisch object afbeeldt of documenteert, zoals een foto van een artefact, een film van een opgraving of een geluidsopname van een interview met een architect.</li>
       </ul>
     </aside>
 
@@ -234,6 +234,15 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <p>
      De registratie bevat data over de inhoudelijke kennis, geografische ligging en fysieke standplaats van een cultuurhistorisch object. In het model wordt deze registratie onderverdeeld in:
     </p>
+
+<aside class="toelichting">
+    <div class="toelichting-title">Model</div>
+    <figure class="model breed-900">
+      <img 
+        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
+        alt="Beschrijving van het model"/>
+    </figure>
+  </aside>
 
     <section>
       <h5>Kennisregistratie</h5>
@@ -277,17 +286,6 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <div class="toelichting-title">Toelichting</div> 
     <p>Een voorbeeld is de plaatsingscode van een kunstvoorwerp in een kast of op een plank.</p></aside>
     </section>
-  
-
-  <br>
-  <aside class="toelichting">
-    <div class="toelichting-title">Model</div>
-    <figure class="model breed-900">
-      <img 
-        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
-        alt="Beschrijving van het model"/>
-    </figure>
-  </aside>
 </section>
 </section>
 
@@ -356,10 +354,10 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <section id="begrippen-laag">
       <h4>Begrippen-laag</h4>
       <p>
-        Hier worden de genormaliseerde termen en begrippen vastgelegd die per object of aspect gebruikt mogen worden.
+        Hier worden de genormaliseerde begrippen als termen vastgelegd die per object of aspect gebruikt mogen worden.
       </p>
       <p>
-        Deze termen komen uit gecontroleerde vocabulaires of thesauri en zorgen voor consistentie en hergebruik van terminologie. Dit vermindert ambiguïteit en bevordert interoperabiliteit.
+        Deze termen komen uit gecontroleerde woorddenlijsten of thesauri en zorgen voor consistentie en hergebruik van terminologie. Dit vermindert ambiguïteit en bevordert interoperabiliteit.
       </p>
     </section>
 
@@ -370,8 +368,7 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
         Deze laag doorkruist alle andere lagen van het datamodel.
       </p>
       <p>
-        Op het niveau van elk eigenschappen wordt vastgelegd waar de informatie vandaan komt (de bron), hoe betrouwbaar deze is, en binnen welke periode de informatie geldig is.
-      </p>
+      Op het niveau van elke eigenschap wordt vastgelegd wat de bron van de informatie is, hoe betrouwbaar deze is en binnen welke periode de informatie geldig is.
     </section>
 
   </section>
@@ -379,13 +376,14 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <section id="relaties-model">
   <h2>Relaties, tijd en herkomst in het model</h2>
+  <p>In dit hoofdstuk wordt uiteengezet hoe cultuurhistorische objecten in hun onderlinge relaties, in de tijd en in hun herkomst worden beschreven, zodat zowel de samenhang tussen objecten als hun historische context en bronverwijzing inzichtelijk worden gemaakt.</p>
 
   <!-- Subhoofdstuk: Samenhang -->
   <section id="samenhang" class="subhoofdstuk">
     <h3>Samenhang</h3>
-    <p>In dit deel wordt toegelicht hoe eigenschappen en subonderdelen van een object met elkaar verbonden zijn.</p>
+    <p>In dit deel wordt uitgelegd hoe cultuurhistorische objecten en hun onderdelen met elkaar en met andere objecten verbonden kunnen zijn.</p>
 
-    <p>Een cultuurhistorisch object kan voorkomen op één of meerdere beeld- en audiovisuele objecten, zoals foto’s, tekeningen of websites. Andersom kan een tekst-object een afbeelding bevatten van één of meerdere cultuurhistorische objecten. Beeld- en audiovisuele objecten kunnen daarnaast binnen tekst-objecten zoals boeken of tijdschriften voorkomen.</p>
+    <p>Een cultuurhistorisch object kan worden afgebeeld op één of meerdere beeld- of audiovisuele dragers, zoals foto’s, tekeningen of geluidsopname. Andersom kan een tekst-object een afbeelding bevatten van één of meerdere cultuurhistorische objecten. Beeld- en audio-visuele objecten kunnen daarnaast binnen tekst-objecten zoals boeken of tijdschriften voorkomen.</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Model</div>
@@ -394,16 +392,14 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
       </figure>
     </aside>
 
-    <p>Cultuurhistorische objecten kunnen op verschillende manieren met elkaar verbonden zijn. Twee belangrijke soorten samenhang zijn te onderscheiden:</p>
+    <p>Cultuurhistorische objecten kunnen op verschillende manieren met elkaar verbonden zijn. Een belangrijke vorm van samenhang is de hiërarchische relatie tussen objecten.</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Voorbeeld</div>
       <p>Een rijksmonument kan onderdeel zijn van een groter complex.</p>
     </aside>
 
-    <p>De eerste soort betreft een hiërarchische relatie tussen objecten, bijvoorbeeld wanneer een rijksmonument onderdeel uitmaakt van een complex.</p>
-
-    <p>Binnen de archeologie wordt samenhang tussen objecten gedetailleerd en ruimtelijk vastgelegd. De structuur is als volgt:</p>
+    <p>Binnen de archeologie wordt samenhang systematisch vastgelegd in een hiërarchisch model: van onderzoeksgebied, naar vindplaats, vervolgens complex en terrein, en uiteindelijk vondsten en grondsporen. De structuur is als volgt:</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Model</div>
@@ -428,7 +424,7 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
     <p>Daarnaast onderscheidt het model het <strong>archeologisch terrein</strong>, een begrensd gebied met aanwezige of voormalige archeologische resten. Binnen een terrein kunnen meerdere complexen liggen, en meerdere terreinen samen kunnen worden aangeduid als een <em>archeologisch rijksmonument</em>, een juridische aanduiding met beschermde status.</p>
 
-    <p>De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. Dit zijn tastbare bewijzen van menselijke activiteit en ze zijn gekoppeld aan een complex of terrein. De relaties tussen deze objecten omvatten onder andere: <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>.</p>
+    <p>De meest gedetailleerde objecten in het model zijn <strong>vondsten</strong> en <strong>grondsporen</strong>. Dit zijn tastbare bewijzen van menselijke activiteit en ze zijn gekoppeld aan een complex of terrein. De relaties tussen deze objecten worden vastgelegd met termen als <i>ligt_in</i>, <i>bevat</i>, <i>is_onderdeel_van</i> en <i>bestaat_uit</i>, waarmee wordt aangegeven hoe objecten zich ruimtelijk of structureel tot elkaar verhouden.</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Model</div>
@@ -441,7 +437,9 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   <!-- Subhoofdstuk: Tijdsaspect -->
   <section id="tijdsaspect" class="subhoofdstuk">
     <h3>Tijdsaspect</h3>
-    <p>Het tijdsaspect beschrijft wanneer iets heeft plaatsgevonden. Dit kan variëren van een specifieke datum tot een ruimer tijdvak of een periode met een begin- en einddatum. Er zijn twee typen te onderscheiden:</p>
+    <p>Het tijdsaspect beschrijft het moment of de periode waarin een object is ontstaan, gebruikt of veranderd.</p>
+    <p>Dit kan variëren van een specifieke datum tot een ruimer tijdvak of een periode met een begin- en einddatum. Er zijn twee typen te onderscheiden.</p>
+    <p>Type 1 beschrijft een concreet moment of een exact afgebakend tijdvak, terwijl type 2 verwijst naar een bredere historische periode.</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Type 1 (datum of tijdvak)</div>
@@ -479,7 +477,7 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <h3>Feit en gebeurtenis</h3>
     <p>Hier wordt het verschil tussen een feit en een gebeurtenis toegelicht.</p>
 
-    <p>Een feit betreft een directe toekenning van een eigenschap aan een object, terwijl een gebeurtenis een proces of handeling beschrijft waarbij het aspect aan die gebeurtenis wordt verbonden.</p>
+    <p>Een feit legt een eigenschap rechtstreeks vast aan een object (bijvoorbeeld het bouwjaar). Een gebeurtenis beschrijft een proces of handeling (zoals vervaardiging of verbouwing), waarbij eigenschappen via die gebeurtenis aan het object worden gekoppeld.</p>
 
     <aside class="toelichting">
       <div class="toelichting-title">Voorbeeld</div>
@@ -489,17 +487,16 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
       </ul>
     </aside>
 
-    <p>Aan een gebeurtenis kunnen verder aspecten worden gekoppeld, zoals de betrokken personen of het ruimtelijk aspect, evenals alle type-aspecten die betrekking hebben op de gebeurtenis zelf.</p>
+    <p>Aan een gebeurtenis kunnen bovendien aanvullende kenmerken worden gekoppeld, zoals betrokken personen, de locatie of specifieke tijdsaspecten.</p>
   </section>
 </section>
 
  
   <section id="gebruik-begrippen">
   <h2>Gebruik van begrippen in het model</h2>
-  <p>In dit hoofdstuk wordt het belang en de toepassing van begrippen binnen het model toegelicht. 
-  Daarbij komen de verschillende soorten begrippen aan bod en het belang van hun toepassing.</p>
-  <p>Begrippen vormen een belangrijk onderdeel van het RCE-datamodel: ze maken het mogelijk om informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier vast te leggen. Dit vergemakkelijkt het vinden, delen en uitwisselen van informatie.
-  </p>
+  <p>In dit hoofdstuk wordt het belang en de toepassing van begrippen binnen het model toegelicht. Daarbij komen de verschillende soorten begrippen aan bod en het belang van hun toepassing.</p>
+  <p>Begrippen vormen een belangrijk onderdeel van het RCE-datamodel: ze maken het mogelijk om informatie over erfgoed op een duidelijke, herbruikbare en betekenisvolle manier vast te leggen. Dit vergemakkelijkt het vinden, delen en uitwisselen van informatie.</p>
+  
   <aside class="toelichting">
     <div class="toelichting-title">Toelichting</div> 
     <p>De waarden die gebruikt moeten worden — zoals bij het functie van een monument <i>kerk</i> of bij het rol van een actor <i>architect</i> — zijn afkomstig uit een termenlijst.</p>
@@ -507,20 +504,19 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
   <section id="soorten-begrippen">
     <h3>Soorten begrippen</h3>
-    <p>Beschrijft de verschillende typen begrippen die in het model worden gebruikt.</p>
-    <p>Het model ondersteunt en past verschillende typen begrippensystemen toe, afhankelijk van de toepassing en het vakgebied waarin ze worden ingezet.</p>
+    <p>In dit onderdeel worden de verschillende typen begrippen beschreven die binnen het model worden toegepast. Het model ondersteunt verschillende soorten begrippensystemen, afhankelijk van de toepassing en het vakgebied waarin ze worden ingezet.</p>
     
     <aside class="toelichting">
-      <div class="toelichting-title">Toelichting</div>
-      <figure class="model breed-500">
-        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/begrippensystemen.png" alt="Begrippensystemen">
-      </figure>
-    </aside>
-  </section>
+  <div class="toelichting-title">Toelichting</div>
+  <p>In het bijbehorende plaatje worden de begrippen aangeduid als <em>termen</em>. Dit is uitsluitend een terminologische keuze in de visualisatie; inhoudelijk betekenen <strong>begrippen</strong> en <em>termen</em> hetzelfde.</p>
+  <figure class="model breed-500">
+    <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/begrippensystemen.png" alt="Begrippensystemen">
+  </figure>
+</aside>
 
   <section id="waarom-begrippen">
     <h3>Waarom begrippen gebruiken?</h3>
-    <p>Door gebruik te maken van begrippen uit een gecontroleerde lijst wordt informatie eenduidiger, beter doorzoekbaar en beter koppelbaar met andere bronnen:</p>
+    <p>Door gebruik te maken van begrippen uit gecontroleerde lijsten wordt informatie eenduidiger, beter doorzoekbaar en beter koppelbaar met andere bronnen.</p>
 <ul>
   <li>Consistente terminologie voorkomt dubbelzinnigheid en invoerfouten.</li>
   <li>Verbetert de vindbaarheid door gebruik van bredere of alternatieve termen.</li>
