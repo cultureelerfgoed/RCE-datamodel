@@ -50,6 +50,21 @@
       ]
     };
   </script>
+<style>
+  .feiten-tabel {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1em;
+  }
+  .feiten-tabel th, .feiten-tabel td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  .feiten-tabel th {
+    background-color: #f2f2f2;
+  }
+</style>
 
   <!-- CSS styling -->
   <style>
@@ -472,49 +487,66 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
       </figure>
     </aside>
   </section>
+<section>
+  <h3>Feiten en gebeurtenissen</h3>
 
-  <!-- Subhoofdstuk: Feit en gebeurtenis -->
-  <section id="feit-gebeurtenis" class="subhoofdstuk">
-    <h3>Feit en gebeurtenis</h3>
-    <p>Hier wordt het verschil tussen een feit en een gebeurtenis toegelicht.</p>
+  <p>Hier wordt het verschil tussen een <strong>feit</strong> en een <strong>gebeurtenis</strong> toegelicht.</p>
 
-    <p>Een feit legt een eigenschap rechtstreeks vast aan een object (bijvoorbeeld het bouwjaar). Een gebeurtenis beschrijft een proces of handeling (zoals vervaardiging of verbouwing), waarbij eigenschappen via die gebeurtenis aan het object worden gekoppeld.</p>
+  <p>
+    Een feit is een eigenschap die rechtstreeks aan een object wordt gekoppeld, 
+    bijvoorbeeld het bouwjaar van een gebouw.
+  </p>
+  <p>
+    Een gebeurtenis beschrijft een proces of handeling (zoals vervaardiging of verbouwing), 
+    waarbij eigenschappen via die gebeurtenis aan het object worden verbonden.
+  </p>
 
-    <aside class="toelichting">
-      <div class="toelichting-title">Voorbeeld</div>
-      <ul>
-        <li><strong>Feit:</strong> Het bouwjaar van een rijksmonument is 1820 of ligt tussen 1820 en 1850.</li>
-        <li><strong>Gebeurtenis:</strong> Een gulden kan vervaardigd zijn vanaf de periode Late Middeleeuwen B tot en met Nieuwe Tijd Laat (1250–1945), waarbij 'vervaardigd' de gebeurtenis betreft.</li>
-      </ul>
-    </aside>
+  <aside class="toelichting">
+    <div class="toelichting-title">Voorbeeld</div>
+    <ul>
+      <li><strong>Feit:</strong> Het bouwjaar van een rijksmonument is 1820 of ligt tussen 1820 en 1850.</li>
+      <li><strong>Gebeurtenis:</strong> Een munt kan vervaardigd zijn in de periode van de Late Middeleeuwen B tot en met de Nieuwe Tijd Laat (1250–1945), waarbij ‘vervaardiging’ de gebeurtenis is.</li>
+    </ul>
+  </aside>
 
-    <p>Aan een gebeurtenis kunnen bovendien aanvullende kenmerken worden gekoppeld, zoals betrokken personen, de locatie of specifieke tijdsaspecten.</p>
-   <p>Onderstaand overzicht geeft inzicht in de verschillende manieren waarop tijd en eigenschappen van objecten kunnen worden beschreven, inclusief voorbeelden van tijdsaspecten, feiten en gebeurtenissen.</p><p>Een <strong>feit</strong> is een eigenschap die rechtstreeks aan een object wordt gekoppeld en kan een exacte datum, begin- of einddatum hebben (Type 1). Een <strong>gebeurtenis</strong> beschrijft een proces of handeling die eigenschappen via de gebeurtenis aan een object koppelt en kan een exacte datum, circa-datum of periode met begin- en einddatum hebben (Type 1 / Type 2).</p>
-  <table border="1" cellspacing="0" cellpadding="5">
-  <thead>
-    <tr>
-      <th>Aspect</th>
-      <th>Wat beschrijft het?</th>
-      <th>Tijdsaspect</th>
-      <th>Tijdstype</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Feit</td>
-      <td>Eigenschap die rechtstreeks aan een object wordt gekoppeld</td>
-      <td>Exacte datum, begin- of einddatum</td>
-      <td>Type 1</td>
-    </tr>
-    <tr>
-      <td>Gebeurtenis</td>
-      <td>Proces of handeling die eigenschappen via de gebeurtenis aan een object koppelt</td>
-      <td>Exacte datum, datum/jaar circa, periode met begin- en einddatum (alleen tijdelement)</td>
-      <td>Type 1 / Type 2</td>
-    </tr>
-  </tbody>
-</table>
-  </section>
+  <p>
+    Aan een gebeurtenis kunnen alle relevante aspecten worden gekoppeld, zoals betrokken personen, de locatie, het type, de toegepaste techniek en specifieke tijdsaspecten.
+  </p>
+
+  <h4>Feiten en gebeurtenissen in relatie tot tijd</h4>
+  <ul>
+    <li><strong>Feit:</strong> een eigenschap die rechtstreeks aan een object wordt gekoppeld 
+        en die kan worden voorzien van een exacte datum, begindatum of einddatum (Type 1).</li>
+    <li><strong>Gebeurtenis:</strong> een proces of handeling die eigenschappen via de gebeurtenis aan een object koppelt 
+        en die kan worden beschreven met een exacte datum, circa-datum of een periode met begin- en einddatum (Type 1 / Type 2).</li>
+  </ul>
+
+  <table class="feiten-tabel">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Wat beschrijft het?</th>
+        <th>Tijdsaspect</th>
+        <th>Tijdstype</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Feit</strong></td>
+        <td>Eigenschap die rechtstreeks aan een object wordt gekoppeld</td>
+        <td>Exacte datum, begindatum, einddatum</td>
+        <td>Type 1</td>
+      </tr>
+      <tr>
+        <td><strong>Gebeurtenis</strong></td>
+        <td>Proces of handeling die eigenschappen via de gebeurtenis aan een object koppelt</td>
+        <td>Exacte datum, circa-datum, periode met begin- en einddatum</td>
+        <td>Type 1 / Type 2</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
 </section>
 
  
