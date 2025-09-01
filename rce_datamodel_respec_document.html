@@ -68,84 +68,90 @@
 
   <!-- CSS styling -->
   <style>
-    aside.toelichting {
-      border-left: 3px solid #6699cc;
-      background-color: #f9fbfc;
-      padding: 1em 1.2em;
-      margin: 1.5em 0;
-      border-radius: 4px;
-      font-size: 0.95em;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
+    /* Styling voor toelichting */
+aside.toelichting {
+  border-left: 3px solid #6699cc;
+  background-color: #f9fbfc;
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
 
-    aside.toelichting.breed-uit {
-      margin-left: calc(-2vw);
-      margin-right: calc(-2vw);
-      padding-left: 2vw;
-      padding-right: 2vw;
-      max-width: 100vw;
-      overflow-x: auto;
-    }
+aside.toelichting.breed-uit {
+  margin-left: calc(-2vw);
+  margin-right: calc(-2vw);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  max-width: 100vw;
+  overflow-x: auto;
+}
 
-    aside.toelichting p {
-      margin-top: 0;
-      font-weight: 500;
-      color: #333;
-    }
+aside.toelichting p {
+  margin-top: 0;
+  font-weight: 500;
+  color: #333;
+}
 
-    aside.toelichting .toelichting-title {
-      font-weight: 700;
-      font-size: 1.1em;
-      color: #004080;
-      margin-bottom: 0.5em;
-    }
+aside.toelichting .toelichting-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #004080;
+  margin-bottom: 0.5em;
+}
 
-    aside.toelichting dl {
-      margin: 1em 0 0 0;
-    }
+aside.toelichting dl {
+  margin: 1em 0 0 0;
+}
 
-    aside.toelichting dt {
-      font-weight: 600;
-      margin-top: 0.8em;
-      color: #004080;
-    }
+aside.toelichting dt {
+  font-weight: 600;
+  margin-top: 0.8em;
+  color: #004080;
+}
 
-    aside.toelichting dd {
-      margin: 0.2em 0 0.5em 1.5em;
-      color: #333;
-    }
+aside.toelichting dd {
+  margin: 0.2em 0 0.5em 1.5em;
+  color: #333;
+}
 
-    figure.model {
-      width: 100%;
-      margin: 1em 0;
-      padding: 1em;
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: flex-start;
-      overflow-x: auto;
-    }
+/* Styling voor figuren met diagrammen */
+figure.model {
+  display: block;   /* geen flex, zodat width van img telt */
+  width: auto;      /* laat img de breedte bepalen */
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* zorgt dat grote diagrammen scrollbaar zijn */
+}
 
-    figure.model img {
-      height: auto;
-      border-radius: 6px;
-      max-width: 100%;
-      display: block;
-    }
+figure.model img {
+  display: block;
+  width: auto;
+  max-width: 100%;  /* past aan schermbreedte aan */
+  height: auto;
+  border-radius: 6px;
+}
 
-    .breed-400 img { width: 400px; }
-    .breed-500 img { width: 500px; }
-    .breed-600 img { width: 600px; }
-    .breed-625 img { width: 625px; }
-    .breed-650 img { width: 650px; }
-    .breed-700 img { width: 700px; }
-    .breed-800 img { width: 800px; }
-    .breed-850 img { width: 850px; }
-    .breed-900 img { width: 900px; }
-    .breed-1000 img { width: 1000px; }
-    .breed-1100 img { width: 1100px; }
-    .breed-1200 img { width: 1200px; }
+
+
+/* Breedteklassen voor diagrammen */
+.breed-400 img { width: 400px; }
+.breed-500 img { width: 500px; }
+.breed-600 img { width: 600px; }
+.breed-625 img { width: 625px; }
+.breed-650 img { width: 650px; }
+.breed-700 img { width: 700px; }
+.breed-800 img { width: 800px; }
+.breed-850 img { width: 850px; }
+.breed-900 img { width: 900px; }
+.breed-1000 img { width: 1000px; }
+.breed-1100 img { width: 1100px; }
+.breed-1200 img { width: 1200px; }
+
   </style>
 </head>
 
@@ -227,8 +233,8 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
     <aside class="toelichting">
       <div class="toelichting-title">Visualisatie</div>
-      <figure class="model breed-400">
-        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_samenhang_objecten2.drawio.svg" alt="Model van samenhangstypen tussen objecten">
+      <figure class="model breed-600">
+        <img src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_samenhang_objecten.drawio.svg" alt="Model van samenhang tussen cultuurhistorische objecten en (beeld)dragers">
       </figure>
     </aside>
 
@@ -253,9 +259,9 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
 
 <aside class="toelichting">
     <div class="toelichting-title">Visualisatie</div>
-    <figure class="model breed-900">
+    <figure class="model breed-1200">
       <img 
-        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/LDM_opbouw.drawio.svg" 
+        src="https://raw.githubusercontent.com/cultureelerfgoed/DNA_NL/main/CDM_opbouw.drawio.svg" 
         alt="Beschrijving van het model"/>
     </figure>
   </aside>
@@ -1335,7 +1341,15 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
     <h2>Implementatie van het model</h2>
     <p>Dit hoofdstuk geeft richtlijnen en voorbeelden voor het toepassen van het model in de praktijk.</p>
     <p>Een implementatie van het RCE datamodel is het linked datamodel: Cultureel Erfgoed Ontologie.(ceo)</p>
-</section>
+<pre class="mermaid">
+classDiagram
+    ceo:Vondsten <|-- schema:Thing
+    ceo:Vondsten : aantalVondsten (xsd:integer)
+    ceo:Vondsten : heeftToestand → skos:Concept
+    ceo:Vondsten : heeftArcheologischeWaardering → skos:Concept
+</pre>
+
+  </section>
 
 </section>
 </body>
